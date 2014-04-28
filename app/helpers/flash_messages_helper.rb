@@ -30,8 +30,10 @@ module FlashMessagesHelper
   end
 
   def filtered_flash_messages
-    flash.select do |message|
+    array = flash.select do |message|
       %i(alert notice).include? message.first
-    end.to_h
+    end
+
+    Hash[*array]
   end
 end
