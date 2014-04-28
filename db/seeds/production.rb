@@ -6,10 +6,10 @@ puts 'Creating Configuration entries...'
 
   {
     company_name: 'Neighbor.ly',
-    host: 'localhost',
-    base_url: 'http://localhost',
+    host: 'raiseanaim.herokuapp.com',
+    base_url: 'http://raiseanaim.herokuapp.com',
     blog_url: 'http://blog.neighbor.ly',
-    base_domain: 'localhost',
+    base_domain: 'raiseanaim.herokuapp.com',
     email_contact: 'howdy@neighbor.ly',
     email_payments: 'books@neighbor.ly',
     email_system: 'no-reply@neighbor.ly',
