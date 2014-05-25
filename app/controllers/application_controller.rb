@@ -28,7 +28,8 @@ class ApplicationController < ActionController::Base
 
   private
   def use_ssl?
-    Rails.env.production? && !request.subdomain.present?
+    # Rails.env.production? && !request.subdomain.present?
+    false
   end
 
   def referal_it!
