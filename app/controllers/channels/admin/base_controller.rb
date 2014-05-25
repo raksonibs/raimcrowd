@@ -3,8 +3,8 @@ module Channels::Admin
     inherit_resources
 
     before_filter do
-      # puts "CHANNEL: #{channel}"
-      # authorize channel, :admin?
+      puts "CHANNEL: #{channel}"
+      authorize channel, :admin?
     end
   end
 end
