@@ -94,8 +94,9 @@ group :production do
   gem 'newrelic_rpm', '3.6.9.171'
 end
 
+gem 'ffaker'
+
 group :development do
-  gem 'ffaker'
   gem "letter_opener"
   gem 'thin'
   gem 'better_errors'
