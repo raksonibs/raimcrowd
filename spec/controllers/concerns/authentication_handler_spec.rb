@@ -8,7 +8,7 @@ describe Concerns::AuthenticationHandler do
     context 'when rails env is production and IS_STAGING is not setted' do
       before do
         Rails.env.stub(:production?).and_return(true)
-        ::Configuration[:base_domain] = 'neighbor.ly'
+        ::Configuration[:base_domain] = 'herokuapp.com'
         ENV['IS_STAGING'] = nil
       end
 
