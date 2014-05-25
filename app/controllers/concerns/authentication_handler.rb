@@ -6,7 +6,7 @@ module Concerns::AuthenticationHandler
     before_filter :set_return_to, if: -> { !current_user && params[:redirect_to].present? }
     before_filter :redirect_user_back_after_login, unless: :devise_controller?
     before_filter :configure_permitted_parameters, if: :devise_controller?
-    before_filter :force_base_domain_with_ssl, if: :devise_controller?
+    # before_filter :force_base_domain_with_ssl, if: :devise_controller?
     helper_method :base_domain_with_https_url_params
 
     def base_domain_with_https_url_params
