@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def channel
-    Channel.find_by_permalink(request.subdomain.to_s) || Channel.first
+    Channel.find_by_permalink(request.subdomain.to_s)
   end
 
   def referal_link

@@ -37,6 +37,8 @@ Neighborly::Application.routes.draw do
     resources :emails, only: [ :index, :show ]
   end
 
+  mount Neighborly::Admin::Engine => '/admin/', as: :neighborly_admin
+
   # Channels
   constraints subdomain: /^(?!www|secure|test|local|staging|neighborly|neighborly-staging)(\w+)/ do
     namespace :channels, path: '' do
@@ -74,7 +76,7 @@ Neighborly::Application.routes.draw do
     end
   end
 
-  mount Neighborly::Admin::Engine => '/admin/', as: :neighborly_admin
+
 
   # Root path should be after channel constraints
   root to: 'projects#index'
