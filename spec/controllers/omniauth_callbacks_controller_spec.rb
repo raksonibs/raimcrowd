@@ -17,7 +17,7 @@ describe OmniauthCallbacksController do
     end
     let(:user) { FactoryGirl.create(:user, authorizations: [authorization]) }
     let(:provider) { FactoryGirl.create(:oauth_provider, name: :facebook) }
-    let(:serialized_user) { { email: 'juquinha@neighbor.ly' } }
+    let(:serialized_user) { { email: 'juquinha@raiseanaim.org' } }
     before do
       controller.stub(:current_user).and_return(user)
     end

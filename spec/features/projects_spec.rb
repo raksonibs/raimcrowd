@@ -7,8 +7,8 @@ describe "Projects" do
 
   before {
     ProjectsController.any_instance.stub(:last_tweets).and_return([])
-    ::Configuration[:base_url] = 'http://neighbor.ly'
-    ::Configuration[:company_name] = 'Neighbor.ly'
+    ::Configuration[:base_url] = 'http://raiseanaim.org'
+    ::Configuration[:company_name] = 'RaiseanAim'
   }
 
   describe "home" do

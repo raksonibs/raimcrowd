@@ -57,11 +57,11 @@ module Concerns::AuthenticationHandler
 
     def black_list_domains
       ['neighborly-staging.herokuapp.com',
-       'staging.neighbor.ly',
-        'channel.staging.neighbor.ly',
-        'kaboom.neighbor.ly',
-        'cfg.neighbor.ly',
-        'makeitright.neighbor.ly']
+       'staging.raiseanaim.org',
+        'channel.staging.raiseanaim.org',
+        'kaboom.raiseanaim.org',
+        'cfg.raiseanaim.org',
+        'makeitright.raiseanaim.org']
     end
   end
 end

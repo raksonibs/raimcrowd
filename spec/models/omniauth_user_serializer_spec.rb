@@ -21,7 +21,7 @@ describe OmniauthUserSerializer do
   end
 
   it 'defines an e-mail' do
-    expect(subject[:email]).to eql('juquinha@neighbor.ly')
+    expect(subject[:email]).to eql('juquinha@raiseanaim.org')
   end
 
   it 'defines a nickname' do

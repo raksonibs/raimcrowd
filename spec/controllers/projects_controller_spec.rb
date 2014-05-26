@@ -60,7 +60,7 @@ describe ProjectsController do
     describe 'staging env' do
       before do
         request.stub(:protocol).and_return("http://")
-        request.stub(:host).and_return("staging.neighbor.ly")
+        request.stub(:host).and_return("staging.raiseanaim.org")
         request.stub(:port).and_return(80)
         request.stub(:port_string).and_return(":80")
         request.stub(:path).and_return("/")
@@ -73,7 +73,7 @@ describe ProjectsController do
     end
 
     describe 'users without email' do
-      let(:current_user) { create(:user, email: "change-your-email+#{Time.now.to_i}@neighbor.ly") }
+      let(:current_user) { create(:user, email: "change-your-email+#{Time.now.to_i}@raiseanaim.org") }
 
       before do
         get :index

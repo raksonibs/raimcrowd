@@ -13,7 +13,7 @@ describe ProjectObserver do
     Configuration[:email_contact] = 'foo@foo.com'
     Configuration[:facebook_url] = 'http://facebook.com/foo'
     Configuration[:blog_url] = 'http://blog.com/foo'
-    Configuration[:company_name] = 'Neighbor.ly'
+    Configuration[:company_name] = 'RaiseanAim'
     Notification.unstub(:notify)
     Notification.unstub(:notify_once)
   end

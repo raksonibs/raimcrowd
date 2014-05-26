@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Neighborly::Balanced::Creditcard::VERSION
   spec.authors       = ['Josemar Luedke', 'Irio Musskopf']
   spec.email         = %w(josemarluedke@gmail.com iirineu@gmail.com)
-  spec.summary       = 'Neighbor.ly integration with Credit Card Balanced Payments.'
-  spec.description   = 'Integration with Balanced Payments on Neighbor.ly specifically with Credit Cards.'
+  spec.summary       = 'RaiseanAim integration with Credit Card Balanced Payments.'
+  spec.description   = 'Integration with Balanced Payments on RaiseanAim specifically with Credit Cards.'
   spec.homepage      = 'https://github.com/neighborly/neighborly-balanced-creditcard'
   spec.license       = 'MIT'
 

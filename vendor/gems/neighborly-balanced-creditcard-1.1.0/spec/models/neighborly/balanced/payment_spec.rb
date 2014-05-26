@@ -111,10 +111,10 @@ describe Neighborly::Balanced::Payment do
 
       it 'defines appears_on_statement_as on debit' do
         ::Configuration.stub(:[]).with(:balanced_appears_on_statement_as).
-          and_return('Neighbor.ly')
+          and_return('RaiseanAim')
 
         customer.should_receive(:debit).
-                 with(hash_including(appears_on_statement_as: 'Neighbor.ly')).
+                 with(hash_including(appears_on_statement_as: 'RaiseanAim')).
                  and_return(debit)
         subject.checkout!
       end

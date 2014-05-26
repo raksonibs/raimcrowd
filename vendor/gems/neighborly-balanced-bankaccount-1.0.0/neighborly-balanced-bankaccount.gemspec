@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Neighborly::Balanced::Bankaccount::VERSION
   spec.authors       = ['Josemar Luedke', 'Irio Musskopf']
   spec.email         = %w(josemarluedke@gmail.com iirineu@gmail.com)
-  spec.summary       = 'Neighbor.ly integration with Bank Account Balanced Payments.'
-  spec.description   = 'Integration with Balanced Payments on Neighbor.ly specifically with Bank Accounts.'
+  spec.summary       = 'RaiseanAim integration with Bank Account Balanced Payments.'
+  spec.description   = 'Integration with Balanced Payments on RaiseanAim specifically with Bank Accounts.'
   spec.homepage      = 'https://github.com/neighborly/neighborly-balanced-bankaccount'
   spec.license       = 'MIT'
 

@@ -11,7 +11,7 @@ describe UserObserver do
   describe '#after_create' do
     before { UserObserver.any_instance.unstub(:after_create) }
     context 'when the user is with temporary email' do
-      let(:user) { create(:user, email: "change-your-email+#{Time.now.to_i}@neighbor.ly") }
+      let(:user) { create(:user, email: "change-your-email+#{Time.now.to_i}@raiseanaim.org") }
       before { expect_any_instance_of(WelcomeWorker).to_not receive(:perform_async) }
       it { user }
     end

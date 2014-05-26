@@ -6,7 +6,7 @@ en:
     reward_description: 'Reward Description'
     created_at: 'Contribution Made'
     confirmed_at: 'Contribution Confirmed'
-    service_fee: 'Neighbor.ly Fee'
+    service_fee: 'RaiseanAim Fee'
     user_email: 'Email'
     payment_method: 'Payment Method'
     address_street: 'Street'

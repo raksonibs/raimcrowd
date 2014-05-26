@@ -28,8 +28,8 @@ describe UserDecorator do
 
     context 'when profile_type is organization' do
       context "when we the organization name" do
-        let(:user){ create(:user, profile_type: 'organization', organization_attributes: { name: 'Neighbor.ly' }) }
-        it{ should == 'Neighbor.ly' }
+        let(:user){ create(:user, profile_type: 'organization', organization_attributes: { name: 'RaiseanAim' }) }
+        it{ should == 'RaiseanAim' }
       end
 
       context "when we have no organization name" do
@@ -39,8 +39,8 @@ describe UserDecorator do
     end
 
     context 'when profile_type is channel' do
-      let(:user){ create(:channel, name: 'Neighbor.ly').user.reload }
-      it{ should == 'Neighbor.ly' }
+      let(:user){ create(:channel, name: 'RaiseanAim').user.reload }
+      it{ should == 'RaiseanAim' }
     end
   end
 

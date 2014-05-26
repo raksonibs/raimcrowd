@@ -8,14 +8,14 @@ describe Concerns::AuthenticationHandler do
     context 'when rails env is production and IS_STAGING is not setted' do
       before do
         Rails.env.stub(:production?).and_return(true)
-        ::Configuration[:base_domain] = 'neighbor.ly'
+        ::Configuration[:base_domain] = 'raiseanaim.org'
         ENV['IS_STAGING'] = nil
       end
 
       it 'returns a hash with protocol and host' do
         expect(subject).to eq({
           protocol: 'https',
-          host: 'neighbor.ly'
+          host: 'raiseanaim.org'
         })
       end
     end

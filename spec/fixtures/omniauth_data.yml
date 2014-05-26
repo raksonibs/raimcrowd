@@ -3,7 +3,7 @@ provider: facebook
 uid: '1327651586'
 info: !ruby/hash:OmniAuth::AuthHash::InfoHash
   nickname: juquinhadasilva
-  email: juquinha@neighbor.ly
+  email: juquinha@raiseanaim.org
   name: Juquinha da Silva
   first_name: Juquinha
   last_name: da Silva
@@ -27,7 +27,7 @@ extra: !ruby/hash:OmniAuth::AuthHash
     - !ruby/hash:OmniAuth::AuthHash
       employer: !ruby/hash:OmniAuth::AuthHash
         id: '216642795096314'
-        name: Neighbor.ly
+        name: RaiseanAim
       location: !ruby/hash:OmniAuth::AuthHash
         id: '108591349161413'
         name: Kansas City, Missouri
@@ -85,7 +85,7 @@ extra: !ruby/hash:OmniAuth::AuthHash
         name: Applied Mathematics
       type: College
     gender: male
-    email: juquinha@neighbor.ly
+    email: juquinha@raiseanaim.org
     timezone: -3
     locale: en_US
     verified: true

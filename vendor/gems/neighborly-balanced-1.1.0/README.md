@@ -33,7 +33,7 @@ As you might know, Neighborly has a `Configuration` class, responsible to... pro
 ```console
 $ rails runner "Configuration.create!(name: 'balanced_api_key_secret', value: 'YOUR_API_KEY_SECRET_HERE')"
 $ rails runner "Configuration.create!(name: 'balanced_marketplace_id', value: 'YOUR_MARKETPLACE_ID_HERE')"
-$ rails runner "Configuration.create!(name: 'balanced_appears_on_statement_as', value: 'Neighbor.ly')"
+$ rails runner "Configuration.create!(name: 'balanced_appears_on_statement_as', value: 'RaiseanAim')"
 ```
 
 ### Balanced Webhook
