@@ -1,269 +1,56 @@
 = content_for :title, "About Us"
+/- content_for :meta_tags do
+  link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css"
 
 #about-page
   .row
+    /p Hi there, we're RaiseanAim.org.
+
     h1.page-headline
-      | We Help Communities Fund Projects
+      | We are Canada's Civic Crowdfunding Service
 
   .mission
     .row
       h2.subheader.text-center
-        | Neighbor.ly's mission is to connect <strong>communities</strong> with new funding sources, <strong>companies</strong> with new earned media opportunities, and <strong>citizens</strong> with the community projects they care about. 
+        | Our mission is to connect <strong>Cities</strong> with new funding sources while reprioritizing their budget to create jobs/vibrant communities, <strong>companies</strong> with new earned media opportunities through community investment, and <strong>citizens</strong> with the civic natured projects they are passionate about.
 
   .features
     .row
       h2.subheader.text-center
-        | And we have amazing friends:
+        | Those who raised our Aim:
       ul.list-inline
         li.large-3.columns
-          = image_tag 'about/knight.png', title: '2013 Knight Foundation Grantee'
-          h3 @KnightFdn Backed
+          = image_tag 'about/haml.png', title: 'City of Hamilton'
+          h3 Forged with rubies in the heart of a great city..
+          /p Forged from rubies and lots of railties...
         li.large-3.columns
-          = image_tag 'about/civicx.png', title: 'CivicX'
-          h3 #CivicX Accelerated
+          = image_tag 'about/mars.png', title: 'MaRS Discovery District'
+          h3 Our network
+          /p Continues to support us on this journey...
         li.large-3.columns
-          = image_tag 'about/tumml.png', title: 'TUMML'
-          h3 @TUMML Amplified
-        li.large-3.columns
-          = image_tag 'about/madeinkcsf.png', title: 'Made in KC'
-          h3 Made in @KCMO &amp; San Francisco
+          = image_tag 'about/cofb.png', title: 'City of Burlington'
+          h3 Who think its time we RaiseanAim..
+          /p People working with government on civic natured projects
 
   .row
     .page-headline
-      h3 Meet the Neighbors
+      h3 The RAim team
       p
-        | We’re a passionate team of civic geeks, fundraisers, planners, finance folks, techies &amp; entrepreneurs.
-        |  Our mission is to help communities help themselves. We love our country and the thousands of communities that make it.
+        | We’re building a passionate team of civic geeks, planners, finance folks, techies & entrepreneurs.
+        |  Our mission is to see strong and vibrant Canadian cities where smart and socially responsible citizens co-invest and work together with governments to take charge of their own future. We love Canada and want generations to come feel like they belong!
 
   /! Team
   .team
     .row
       .large-4.columns
-        = image_tag 'about/heads/jase.jpg', class: 'img-circle', title: 'Jase Wilson'
-        h4 Jase Wilson
+        = image_tag 'about/heads/obc.jpg', class: 'img-circle', title: 'Civic Crowdfunding'
+        h4 Coming soon.....
         h5
-          | CEO, Founder
-        p MIT grad from KC. Blessed with ADHD. Obsessed with cities and the people who shape / are shaped by them. Building Neighbor.ly to help communities prosper.
+          | The RAim team
+        p Proud Canadian. Loves people, cities and making government more transparent/accountable. Founded RaiseanAim to create vibrant social-economies and a hub for civic innovation at grass roots level.
         ul
           li.social
-            a href="http://linkedin.com/in/luminopolis" target="_blank"
+            a href="http://linkedin.com/in/Raiseanaim" target="_blank"
               i.icon-et-linkedin-circled
-            a href="http://twitter.com/luminopolis" target="_blank"
+            a href="http://twitter.com/raimcanada" target="_blank"
               i.icon-et-twitter-circled
-      .large-4.columns
-        = image_tag 'about/heads/sean.jpg', class: 'pull-left img-circle', title: 'Sean Connolly'
-        h4 Sean Connolly
-        h5
-          | Engagement Director, Cofounder
-        p Small town born &amp; raised, now proud to call Kansas City home. City Planning. Building Neighbor.ly to make cities accessible and vibrant.
-        ul
-          li.social
-            a href="http://linkedin.com/pub/sean-connolly/29/7b3/3b7" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="http://twitter.com/snconnolly" target="_blank"
-              i.icon-et-twitter-circled
-      .large-4.columns
-        = image_tag 'about/heads/sarah.jpg', class: 'pull-left img-circle', title: 'Sarah Shipley'
-        h4 Sarah Shipley
-        h5
-          | Development Director, Cofounder
-        p Decorated communications consultant in love with all things civic. Spearheaded BikeWalkKC and Kansas City B-cycle. Building Neighbor.ly to increase mobility choices.
-        ul
-          li.social
-            a href="http://linkedin.com/pub/sarah-shipley/41/148/329" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="http://twitter.com/shipleycom" target="_blank"
-              i.icon-et-twitter-circled
-    .row
-      .large-4.columns
-        = image_tag 'about/heads/briston.jpg', class: 'img-circle', title: 'Briston Davidge'
-        h4 Briston Davidge
-        h5
-          | Product Director, Cofounder
-        p Seasoned web developer. Makes beautiful, functional, forward thinking things for the community. Building Neighbor.ly to enable children to live life to the fullest.
-        ul
-          li.social
-            a href="http://linkedin.com/in/bristondavidge" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="http://twitter.com/BristonDavidge" target="_blank"
-              i.icon-et-twitter-circled
-      .large-4.columns
-        = image_tag 'about/heads/chris.jpg', class: 'img-circle', title: 'Chris Parrott'
-        h4 Chris Parrott
-        h5
-          | CFO, Cofounder
-        p CPA with deep local gov experience. Brings innovative financial modeling to the table. Building Neighbor.ly to help solve the local gov funding crisis.
-        ul
-          li.social
-            a href="http://linkedin.com/pub/christopher-parrott/b/23/780" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="http://twitter.com/cm_parrott" target="_blank"
-              i.icon-et-twitter-circled
-
-      .large-4.columns
-        = image_tag 'about/heads/patrick.jpg', class: 'img-circle', title: 'Patrick Hosty'
-        h4 Patrick Hosty
-        h5
-          | Cofounder
-        p Philanthropist with deep experience in public finance. Building Neighbor.ly to provide choices for cities.
-        ul
-          li.social
-            a href="http://linkedin.com/in/hosty" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="http://twitter.com/hosty" target="_blank"
-              i.icon-et-twitter-circled
-
-    .row
-      .large-4.columns
-        = image_tag 'about/heads/josemar.jpg', class: 'img-circle', title: 'Josemar Luedke'
-        h4 Josemar Luedke
-        h5
-          | Lead Developer
-        p Addicted to open source. Building Neighbor.ly to bring joy to all communities.
-        ul
-          li.social
-            a href="http://br.linkedin.com/in/josemarluedke" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="http://twitter.com/JosemarLuedke" target="_blank"
-              i.icon-et-twitter-circled
-            a href="https://github.com/josemarluedke" target="_blank"
-              i.icon-et-github-circled
-      .large-4.columns
-        = image_tag 'about/heads/irio.jpg', class: 'img-circle', title: 'Irio Musskopf'
-        h4 Irio Musskopf
-        h5
-          | Developer
-        p Seeker of simple solutions. Building Neighbor.ly to make people happier.
-        ul
-          li.social
-            a href="http://linkedin.com/in/iriomk" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="https://twitter.com/irio" target="_blank"
-              i.icon-et-twitter-circled
-            a href="https://github.com/irio" target="_blank"
-              i.icon-et-github-circled
-      .large-4.columns
-        = image_tag 'about/heads/christine.jpg', class: 'img-circle', title: 'Christine Outram'
-        h4 Christine Outram
-        h5
-          | Advisor
-        p Design-driven, award winning tech geek with an eye for innovation &amp; a knack for project management.  Building Neighbor.ly to connect brands with communities.
-        ul
-          li.social
-            a href="http://linkedin.com/in/christineoutram" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="http://twitter.com/CityInnovation" target="_blank"
-              i.icon-et-twitter-circled
-    .row
-      .large-4.columns
-        = image_tag 'about/heads/seth.jpg', class: 'img-circle', title: 'Seth Friedman'
-        h4 Seth Friedman
-        h5
-          | Advisor
-        p Brand-focused, digitally-fluent strategist. Madison Avenue ad agency veteran. Helps brands be more Neighbor.ly through consumer insight &amp; business acumen.
-        ul
-          li.social
-            a href="http://linkedin.com/pub/seth-friedman/2/364/bab" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="http://twitter.com/sethrf" target="_blank"
-              i.icon-et-twitter-circled
-      .large-4.columns
-        = image_tag 'about/heads/brett.jpg', class: 'img-circle', title: 'Brett Hudson'
-        h4 Brett Hudson
-        h5
-          | Advisor
-        p Director for Business Development at The LAB Miami. Social entrepreneur with deep startup experience. Stanford Public Policy honors grad.
-        ul
-          li.social
-            a href="http://br.linkedin.com/pub/brett-hudson/4/491/a30" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="http://twitter.com/BrettJHudson" target="_blank"
-              i.icon-et-twitter-circled
-      .large-4.columns
-        = image_tag 'about/heads/luke.jpg', class: 'img-circle', title: 'Luke Norris'
-        h4 Luke Norris
-        h5
-          | Advisor
-        p Director of business development for Code for America. Deep experience executing growth strategies for startups, nonprofits &amp; Fortune 500 companies. Building Neighbor.ly to enhance quality of life.
-        ul
-          li.social
-            a href="http://linkedin.com/in/lukednorris" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="http://twitter.com/norrisluke" target="_blank"
-              i.icon-et-twitter-circled
-    .row
-      .large-4.columns
-        = image_tag 'about/heads/jason.jpg', class: 'img-circle', title: 'Jason Grill'
-        h4 Jason Grill
-        h5
-          | Advisor
-        p Attorney, entrepreneur, and owner of public relations firm JGrill Media. Building Neighbor.ly to enable entrepreneurial community spirit.
-        ul
-          li.social
-            a href="http://linkedin.com/in/jasongrill2" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="http://twitter.com/jasongrill" target="_blank"
-              i.icon-et-twitter-circled
-      .large-4.columns
-        = image_tag 'about/heads/jabbar.jpg', class: 'img-circle', title: 'Jabbar Wesley'
-        h4 Jabbar Wesley
-        h5
-          | Advisor
-        p Community builder and corporate relations. Connector of industry experts and startups. Building Neighbor.ly to empower communities.
-        ul
-          li.social
-            a href="http://linkedin.com/pub/jabbar-wesley/a/824/35a" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="" target="_blank"
-              i.icon-et-twitter-circled
-      .large-4.columns
-        = image_tag 'about/heads/david.jpg', class: 'img-circle', title: 'David Johnso'
-        h4 David Johnson
-        h5
-          | Advisor
-        p Rural Kansas native, Crossroads KC since ‘92.  Deep QA experience. Building Neighbor.ly to transform cities through transit.
-        ul
-          li.social
-            a href="http://linkedin.com/in/davekcmo" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="http://twitter.com/kclightrail" target="_blank"
-              i.icon-et-twitter-circled
-    .row
-      .large-4.columns
-        = image_tag 'about/heads/shaul.jpg', class: 'img-circle', title: 'Shaul Jolles'
-        h4 Shaul Jolles
-        h5
-          | Advisor
-        p Tireless innovator, serial entrepreneur, real estate developer. Building Neighbor.ly to enrich communities.
-        ul
-          li.social
-            a href="http://linkedin.com/in/jolles" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="" target="_blank"
-              i.icon-et-twitter-circled
-      .large-4.columns
-        = image_tag 'about/heads/willis.jpg', class: 'img-circle', title: 'Willis Jackson'
-        h4 Willis Jackson III
-        h5
-          | Advisor
-        p Serial entrepreneur. Believes deeply in the potential of cities and urbanism.  Building Neighbor.ly to make US cities great again.
-        ul
-          li.social
-            a href="http://linkedin.com/in/wfjackson3" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="http://twitter.com/wfjackson3" target="_blank"
-              i.icon-et-twitter-circled
-      .large-4.columns
-        = image_tag 'about/heads/antonio.jpg', class: 'img-circle', title: 'Antonio Silva'
-        h4 Antonio Roberto Silva
-        h5
-          | Developer
-        p Passion for helping people. Building Neighbor.ly for communities to get things they want most.
-        ul
-          li.social
-            a href="http://br.linkedin.com/in/devton" target="_blank"
-              i.icon-et-linkedin-circled
-            a href="http://twitter.com/dev_ton" target="_blank"
-              i.icon-et-twitter-circled
-            a href="https://github.com/devton" target="_blank"
-              i.icon-et-github-circled

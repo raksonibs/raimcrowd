@@ -1,0 +1,94 @@
+= initjs_tag app_name: 'Neighborly', partial: true
+
+.neighborly-balanced-creditcard-form[data-balanced-credit-card-form data-balanced-marketplace-id=@balanced_marketplace_id]
+  = simple_form_for :payment, url: payments_path, html: { novalidate: '' } do |f|
+    = f.input :contribution_id, as: :hidden, input_html: { value: params[:contribution_id] }
+    = f.input :pay_fee, as: :hidden, input_html: { value: 1, 'data-pay-payment-fee' => '' }
+    section.highlighted[class="#{'use-existing-item' if @cards.any?}"]
+      - if @cards.any?
+        section.use-existing-item.row
+          .large-12.columns.title
+            h4 = t('.cards.title')
+
+          - @cards.reverse_each.with_index do |card,index|
+            .large-12.columns
+              .card-box
+                label.row
+                  dl
+                    .large-1.columns
+                      = f.radio_button :use_card, card.uri, { checked: index.zero?, label: false }
+                    .large-6.columns
+                      dt.hide
+                      dd = t('.cards.card_ending_in', brand: card.brand, last_four: card.last_four)
+                    .large-5.columns.expiration
+                      dt = t('.cards.expiration')
+                      dd = sprintf('%02i/%i', card.expiration_month, card.expiration_year)
+
+      - else
+        = f.input :use_card, as: :hidden
+
+        .row
+          .large-12.columns.title
+            h4 = t('.card.title')
+
+
+    section.row
+      .large-12.columns
+        .card-box[class="#{'new-card' unless @cards.any?}"]
+          .row
+            - if @cards.any?
+              label
+                .large-1.columns
+                  = f.radio_button :use_card, 'new', { checked: false, label: false }
+                .large-8.columns
+                  = t('.add_new_card')
+                .large-3.columns.expiration
+
+            .large-12.columns.add-new-creditcard-form[class="#{'hide with-others-cards' if @cards.any?}"]
+              .row
+                .large-5.columns
+                  = f.input :card_number, input_html: { 'data-balanced-credit-card-input' => '' }
+                .large-2.columns
+                  = f.input :security_code, maxlength: 4, input_html: { 'data-balanced-credit-card-input' => '' }
+                .large-5.columns
+                  - date = Date.today + 1.month
+                  = f.label :expiration
+                  .row.collapse
+                    .large-5.small-5.columns
+                      = select_month date, { use_two_digit_numbers: true }, { name: 'payment[expiration_month]', id: 'payment_expiration_month', 'data-balanced-credit-card-input' => '' }
+                    .large-1.small-1.columns.text-center.divider
+                      | /
+                    .large-6.small-6.columns
+                      = select_year date, { start_year: date.year, end_year: date.year+15 }, { name: 'payment[expiration_year]', id: 'payment_expiration_year', 'data-balanced-credit-card-input' => '' }
+
+    section.user-informations.highlighted
+      = f.simple_fields_for :user do |fu|
+        .row
+          .large-12.columns.title
+            h4 = t('.billing.title')
+
+        .row
+          .large-6.columns
+            = fu.input :name, required: false, input_html: { value: @customer.name }
+          .large-6.columns
+            = fu.input :address_street, required: false, input_html: { value: @customer.address.try(:[], :line1) }
+        .row
+          .large-5.columns
+            = fu.input :address_city, required: false, input_html: { value: @customer.address.try(:[], :city) }
+          .large-4.columns
+            = fu.input :address_state, required: false, as: :select, collection: State.array, selected: @customer.address.try(:[], :state), include_blank: false
+          .large-3.columns
+            = fu.input :address_zip_code, input_html: { value: @customer.address.try(:[], :postal_code) }
+
+    section
+      .row
+        .large-12.columns.terms
+          = t('.terms', link: link_to(t('.terms-link'), main_app.terms_path(), data: { 'reveal-id' => 'terms-modal', 'reveal-ajax' => true })).html_safe
+
+      .row
+        .large-6.columns.submit
+          = f.button :submit, t('.confirm'), data: { disable_with: t('.proccessing'), enable_with: t('.confirm') }
+        .large-6.columns.text-right.balanced-seal
+          = link_to image_tag('https://balancedpowered.s3.amazonaws.com/secured-1-4.png'), 'https://www.balancedpayments.com/', target: :blank
+
+  #terms-modal.reveal-modal.small.fixed

@@ -1,0 +1,10 @@
+rvm:
+  - 2.1.0
+
+before_install: gem update --remote bundler
+
+before_script:
+  - "bundle exec rake db:migrate"
+
+script:
+  - "bundle exec rspec"

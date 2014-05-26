@@ -1,0 +1,96 @@
+= initjs_tag app_name: 'Neighborly', partial: true
+
+.neighborly-balanced-bankaccount-form[data-balanced-bankaccount-form data-balanced-marketplace-id=@balanced_marketplace_id data-routing-number-path=routing_number_path(:id)]
+  = simple_form_for :payment, url: accounts_path do |f|
+    = f.input :use_bank, as: :hidden
+    .row
+      .large-12.columns.title
+        h3
+          .row
+            .large-4.columns
+              = t('.bankaccount.title')
+            .large-8.columns.text-right
+              small
+                - if @bank_account.present?
+                  = t('.status')
+                  | &nbsp;
+                  - if @bank_account.verifications.try(:first).try(:state) == 'verified'
+                    span.label = t('.account_verified')
+                  - else
+                    span.label.alert = t('.account_unverified')
+                    | &nbsp;
+                    = link_to t('.verify'), new_confirmation_path
+        - if @bank_account
+          p = t('.bankaccount.subtitle')
+
+    .row
+      .large-8.columns
+        - if @bank_account
+          section.use-existing-item.row
+            .large-12.columns
+              .bank-box
+                label.row
+                  dl
+                    .large-1.columns
+                      = f.radio_button :show_bank, 'existing', { class: 'show-bank', checked: false, label: false }
+                    .large-5.columns
+                      dt.hide
+                      dd = @bank_account.account_number
+                    .large-6.columns.bank_name
+                      dt.hine
+                      dd = @bank_account.bank_name
+                .expandable.hide
+                  = f.simple_fields_for :current do |fc|
+                    .row
+                      .large-8.columns
+                        = fc.input :account_holder_name, input_html: { value: @bank_account.try(:name) }
+
+                      .large-4.columns
+                        = fc.input :account_type, as: :radio_buttons, collection: [['Checking', 'checking'], ['Savings', 'savings']], checked: (@bank_account.try(:type) || 'checking')
+
+                    .row
+                      .large-3.columns
+                        = fc.input :routing_number, input_html: { value: @bank_account.try(:routing_number) }
+
+                      .large-4.columns
+                        = fc.input :account_number, input_html: { value: @bank_account.try(:account_number) }
+
+                      .large-5.columns
+                        = fc.input :bank_name, disabled: true, input_html: { value: @bank_account.try(:bank_name) }
+
+        section.row
+          .large-12.columns
+            .bank-box[class="#{'new-bank' unless @bank_account.present?}"]
+               .row
+                 - if @bank_account.present?
+                   label
+                      .large-1.columns
+                        = f.radio_button :show_bank, 'new', { class: 'show-bank', checked: false, label: false }
+                      .large-8.columns
+                        = t('.replace_bank')
+                      .large-3.columns.bank_name
+
+                 .add-new-bankaccount-form.expandable[class="#{'hide with-other-bank' if @bank_account.present?}"]
+                    .large-12.columns.check-numbers
+                      = image_tag('payments/check-numbers.png')
+                    .large-12.columns
+                      .row
+                        .large-8.columns
+                          = f.input :account_holder_name, required: true, input_html: { 'data-balanced-bank-account-input' => '' }
+
+                        .large-4.columns
+                          = f.input :account_type, as: :radio_buttons, checked: 'checking', required: true, collection: [['Checking', 'checking'], ['Savings', 'savings']]
+
+                      .row
+                        .large-3.columns
+                          = f.input :routing_number, required: true, input_html: { 'data-balanced-bank-account-input' => '' }
+
+                        .large-4.columns
+                          = f.input :account_number, required: true, input_html: { 'data-balanced-bank-account-input' => '' }
+
+                        .large-5.columns
+                          = f.input :bank_name, disabled: true, input_html: { 'data-balanced-bank-account-input' => '' }
+
+                        .large-12.columns.submit
+                          = f.button :submit, (@bank_account.present? ? t('.replace') : t('.add')), data: { disable_with: t('.proccessing'), enable_with: (@bank_account.present? ? t('.replace') : t('.add')) }
+

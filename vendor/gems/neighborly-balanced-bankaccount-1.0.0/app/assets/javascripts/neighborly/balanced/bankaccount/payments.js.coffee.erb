@@ -1,0 +1,25 @@
+Neighborly.Neighborly                               ?= {}
+Neighborly.Neighborly.Balanced                      ?= {}
+Neighborly.Neighborly.Balanced.Bankaccount          ?= {}
+Neighborly.Neighborly.Balanced.Bankaccount.Payments ?= {}
+
+Neighborly.Neighborly.Balanced.Bankaccount.Payments.New =
+  modules: -> [Neighborly.Neighborly.Balanced.Bankaccount.Form]
+  init: Backbone.View.extend
+    el: '.neighborly-balanced-bankaccount-form'
+
+    initialize: ->
+      _.bindAll(this, 'toggleSelected', 'toggleReplaceBank')
+      this.$('input[name="payment[use_bank]"]').bind('change', this.toggleReplaceBank)
+      this.$('input[type=radio]').bind('change', this.toggleSelected)
+      this.toggleSelected()
+
+    toggleSelected: ->
+      this.$('.bank-box').removeClass('selected')
+      this.$('input[type=radio]:checked.use-bank').parents('.bank-box').addClass('selected')
+
+    toggleReplaceBank: ->
+      if this.$('#payment_use_bank_new').is(':checked')
+        this.$('.add-new-bankaccount-form').removeClass('hide')
+      else
+        this.$('.add-new-bankaccount-form').addClass('hide')

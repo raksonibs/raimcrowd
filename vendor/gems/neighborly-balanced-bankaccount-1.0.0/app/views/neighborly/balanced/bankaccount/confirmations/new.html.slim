@@ -1,0 +1,53 @@
+.bankaccount-confirmations-new-page.row
+  .large-12.columns
+
+    = simple_form_for :confirmation, url: confirmations_path do |f|
+      .row
+        .large-8.columns
+          h3 = @title = t('.title')
+          p = t('.subtitle')
+          .row
+            .large-5.columns
+              p
+                strong = t('.bank_account_number')
+                | &nbsp;
+                = @bank_account.account_number
+            .large-7.columns
+              p
+                strong = t('.bank_name')
+                | &nbsp;
+                = @bank_account.bank_name
+
+            .large-7.columns
+              .row
+                .large-6.columns
+                  = f.label :amount_1
+                  .row.collapse
+                    .large-4.columns
+                      span.prefix $0.
+                    .large-8.columns
+                      = f.input :amount_1, label: false, placeholder: '00', input_html: { class: 'with-prefix' }
+                .large-6.columns
+                  = f.label :amount_2
+                  .row.collapse
+                    .large-4.columns
+                      span.prefix $0.
+                    .large-8.columns
+                      = f.input :amount_2, label: false, placeholder: '00', input_html: { class: 'with-prefix' }
+            .large-5.columns
+              - if @verification.remaining_attempts < 3
+                .remaining-attempts = t('.remaining_attempts', value: @verification.remaining_attempts)
+          = f.button :submit, t('.submit'), data: { disable_with: t('.proccessing') }
+        section.pending-contributions.large-4.columns
+          - if @contributions.present?
+            h3 = t('.contributions.title')
+
+            section.projects
+              - for contribution in @contributions
+                .project
+                  .project-image
+                    = image_tag contribution.project.display_image('project_thumb'), alt: contribution.project.name
+                  p
+                    strong = contribution.project.name
+                  .contribution
+                    = t('.contributions.value', value: contribution.display_value).html_safe

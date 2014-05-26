@@ -1,0 +1,118 @@
+---
+_type: event_callback
+occurred_at: '2014-02-24T18:28:22.679000Z'
+uri: "/events/EV71b24f249d8111e38b4e026ba7c1aba6/callbacks/CB73FAvbywO7iCB7YyiECmA6"
+entity:
+  status: succeeded
+  hold_uri: "/v1/holds/HL3q0GJGZazOknKiophSQOBO"
+  _type: debit
+  fee: 
+  description: 
+  transaction_number: W358-233-5175
+  customer_uri: "/v1/customers/CUXMfh48EijgGsdEenjvGFU"
+  source_uri: "/v1/marketplaces/TEST-MP24PC81sknFKEuhffrbAixq/cards/CC32qKImdkojMVqijkVQM7j4"
+  uri: "/v1/marketplaces/TEST-MP24PC81sknFKEuhffrbAixq/debits/WD3q99CpFnVTDWMgfXpiC2Mo"
+  events_uri: "/v1/debits/WD3q99CpFnVTDWMgfXpiC2Mo/events"
+  refunds_uri: "/v1/marketplaces/TEST-MP24PC81sknFKEuhffrbAixq/debits/WD3q99CpFnVTDWMgfXpiC2Mo/refunds"
+  amount: 93400
+  _uris:
+    hold_uri:
+      _type: hold
+      key: hold
+    source_uri:
+      _type: card
+      key: source
+    events_uri:
+      _type: page
+      key: events
+    refunds_uri:
+      _type: page
+      key: refunds
+    customer_uri:
+      _type: customer
+      key: customer
+    account_uri:
+      _type: account
+      key: account
+  meta: {}
+  account_uri: "/v1/marketplaces/TEST-MP24PC81sknFKEuhffrbAixq/accounts/CUXMfh48EijgGsdEenjvGFU"
+  on_behalf_of: 
+  appears_on_statement_as: example.com
+  created_at: '2014-02-24T18:28:21.388735Z'
+  id: WD3q99CpFnVTDWMgfXpiC2Mo
+  available_at: '2014-02-24T18:28:22.329024Z'
+logs_uri: "/events/EV71b24f249d8111e38b4e026ba7c1aba6/callbacks/CB73FAvbywO7iCB7YyiECmA6/logs"
+_uris:
+  callbacks_uri:
+    _type: page
+    key: callbacks
+  logs_uri:
+    _type: event_callback_log
+    key: logs
+callbacks_uri: "/events/EV71b24f249d8111e38b4e026ba7c1aba6/callbacks"
+callback_statuses:
+  failed: 0
+  retrying: 0
+  succeeded: 0
+  pending: 1
+type: debit.succeeded
+id: EV71b24f249d8111e38b4e026ba7c1aba6
+registration:
+  _type: event_callback
+  occurred_at: '2014-02-24T18:28:22.679000Z'
+  uri: "/events/EV71b24f249d8111e38b4e026ba7c1aba6/callbacks/CB73FAvbywO7iCB7YyiECmA6"
+  entity:
+    status: succeeded
+    hold_uri: "/v1/holds/HL3q0GJGZazOknKiophSQOBO"
+    _type: debit
+    fee: 
+    description: 
+    transaction_number: W358-233-5175
+    customer_uri: "/v1/customers/CUXMfh48EijgGsdEenjvGFU"
+    source_uri: "/v1/marketplaces/TEST-MP24PC81sknFKEuhffrbAixq/cards/CC32qKImdkojMVqijkVQM7j4"
+    uri: "/v1/marketplaces/TEST-MP24PC81sknFKEuhffrbAixq/debits/WD3q99CpFnVTDWMgfXpiC2Mo"
+    events_uri: "/v1/debits/WD3q99CpFnVTDWMgfXpiC2Mo/events"
+    refunds_uri: "/v1/marketplaces/TEST-MP24PC81sknFKEuhffrbAixq/debits/WD3q99CpFnVTDWMgfXpiC2Mo/refunds"
+    amount: 93400
+    _uris:
+      hold_uri:
+        _type: hold
+        key: hold
+      source_uri:
+        _type: card
+        key: source
+      events_uri:
+        _type: page
+        key: events
+      refunds_uri:
+        _type: page
+        key: refunds
+      customer_uri:
+        _type: customer
+        key: customer
+      account_uri:
+        _type: account
+        key: account
+    meta: {}
+    account_uri: "/v1/marketplaces/TEST-MP24PC81sknFKEuhffrbAixq/accounts/CUXMfh48EijgGsdEenjvGFU"
+    on_behalf_of: 
+    appears_on_statement_as: example.com
+    created_at: '2014-02-24T18:28:21.388735Z'
+    id: WD3q99CpFnVTDWMgfXpiC2Mo
+    available_at: '2014-02-24T18:28:22.329024Z'
+  logs_uri: "/events/EV71b24f249d8111e38b4e026ba7c1aba6/callbacks/CB73FAvbywO7iCB7YyiECmA6/logs"
+  _uris:
+    callbacks_uri:
+      _type: page
+      key: callbacks
+    logs_uri:
+      _type: event_callback_log
+      key: logs
+  callbacks_uri: "/events/EV71b24f249d8111e38b4e026ba7c1aba6/callbacks"
+  callback_statuses:
+    failed: 0
+    retrying: 0
+    succeeded: 0
+    pending: 1
+  type: debit.succeeded
+  id: EV71b24f249d8111e38b4e026ba7c1aba6

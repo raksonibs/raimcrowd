@@ -1,0 +1,21 @@
+en:
+  simple_form:
+    labels:
+      user: &user_labels
+        address_street: 'Street Address'
+        address_city: 'City'
+        address_state: 'State'
+        address_zip_code: 'Zip code'
+        name: 'Name'
+        update_address: "Update my address on my profile."
+      payment:
+        account_holder_name: 'Account Holder Name'
+        routing_number: 'Routing Number'
+        bank_name: 'Bank Name'
+        account_number: 'Account Number'
+        account_type: 'Account Type'
+        user:
+          <<: *user_labels
+      confirmation:
+        amount_1: 'First Amount'
+        amount_2: 'Second Amount'

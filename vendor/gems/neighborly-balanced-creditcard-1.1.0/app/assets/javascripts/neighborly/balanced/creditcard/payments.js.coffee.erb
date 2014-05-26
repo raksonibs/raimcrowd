@@ -1,0 +1,87 @@
+Neighborly.Neighborly                              ?= {}
+Neighborly.Neighborly.Balanced                     ?= {}
+Neighborly.Neighborly.Balanced.Creditcard          ?= {}
+Neighborly.Neighborly.Balanced.Creditcard.Payments ?= {}
+
+Neighborly.Neighborly.Balanced.Creditcard.Payments.New = Backbone.View.extend
+  el: '.neighborly-balanced-creditcard-form'
+
+  initialize: ->
+    _.bindAll(this, 'submit', 'submitToBalanced', 'toggleAddNewCard', 'toggleSelected')
+    this.Flash = Neighborly.Neighborly.Balanced.Creditcard.Flash
+
+    $.getScript 'https://js.balancedpayments.com/v1/balanced.js', ->
+      balancedMarketplaceID = $('[data-balanced-credit-card-form]').attr('data-balanced-marketplace-id')
+      balanced.init("/v1/marketplaces/#{balancedMarketplaceID}")
+
+    this.$button = this.$('input[type=submit]')
+    this.$('form').bind('submit', this.submit)
+    this.$('input[type=radio]').bind('change', this.toggleAddNewCard)
+    this.$('input[type=radio]').bind('change', this.toggleSelected)
+    this.toggleSelected()
+
+  submit: (event) ->
+    selectedCard = this.$('[name="payment[use_card]"]:checked, [name="payment[use_card]"]:hidden')
+    return if $.inArray(selectedCard.val(), ['new', '']) == -1
+
+    event.preventDefault()
+    this.submitToBalanced(selectedCard)
+    # This return is necessary because of jquery_ujs was disabling the submit
+    # button even when we enable it.
+    return false
+
+  submitToBalanced: (selectedCard) ->
+    that = this
+    $.rails.disableFormElements(that.$el)
+
+    creditCardData =
+      card_number:      this.$('#payment_card_number').val()
+      expiration_month: this.$('#payment_expiration_month').val()
+      expiration_year:  this.$('#payment_expiration_year').val()
+      security_code:    this.$('#payment_security_code').val()
+      name:             this.$('#payment_user_name').val()
+      postal_code:      this.$('#payment_user_address_zip_code').val()
+      country_code:     'USA'
+
+    balanced_callback_for_201 = (response) ->
+      selectedCard.val(response.data.uri)
+      that.$('[data-balanced-credit-card-input]').val('')
+      that.$('form').submit()
+      that.Flash.remove()
+
+    <% i18n_scope = 'neighborly.balanced.creditcard.payments.new.errors' %>
+
+    balanced_callback_for_400 = (response) ->
+      that.Flash.message('<%= I18n.t("#{i18n_scope}.invalid_card") %>')
+
+    balanced_callback_for_402 = (response) ->
+      that.Flash.message('<%= I18n.t("#{i18n_scope}.card_tokenization_error") %>')
+
+    balanced_callback_for_404 = (response) ->
+      that.Flash.message('<%= I18n.t("#{i18n_scope}.marketplace_uri") %>')
+
+    balanced_callback_for_500 = (response) ->
+      that.Flash.message('<%= I18n.t("#{i18n_scope}.balanced") %>')
+
+    balanced.card.create creditCardData, (response) ->
+      switch response.status
+        when 201 then balanced_callback_for_201(response)
+        when 400 then balanced_callback_for_400(response)
+        when 402 then balanced_callback_for_402(response)
+        when 404 then balanced_callback_for_404(response)
+        when 500 then balanced_callback_for_500(response)
+
+      if response.status != 201
+        $.rails.enableFormElements(that.$el)
+        $submit = that.$('input[type=submit]')
+        $submit.val($submit.data('enable-with'))
+
+  toggleSelected: ->
+    this.$('.card-box').removeClass('selected')
+    this.$('input[type=radio]:checked').parents('.card-box').addClass('selected')
+
+  toggleAddNewCard: ->
+    if this.$('#payment_use_card_new').is(':checked')
+      this.$('.add-new-creditcard-form').removeClass('hide')
+    else
+      this.$('.add-new-creditcard-form').addClass('hide')

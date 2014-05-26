@@ -1,0 +1,92 @@
+Neighborly.Neighborly                               ?= {}
+Neighborly.Neighborly.Balanced                      ?= {}
+Neighborly.Neighborly.Balanced.Bankaccount          ?= {}
+
+Neighborly.Neighborly.Balanced.Bankaccount.Form = Backbone.View.extend
+  el: '.neighborly-balanced-bankaccount-form'
+
+  initialize: ->
+    _.bindAll(this, 'submit', 'submitToBalanced')
+    this.Flash = Neighborly.Neighborly.Balanced.Bankaccount.Flash
+
+    $.getScript 'https://js.balancedpayments.com/v1/balanced.js', ->
+      balancedMarketplaceID = $('[data-balanced-bankaccount-form]').attr('data-balanced-marketplace-id')
+      balanced.init("/v1/marketplaces/#{balancedMarketplaceID}")
+
+    this.$form = this.$('form')
+    this.$form.bind('submit', this.submit)
+    this.$('#payment_routing_number').bind('blur', this.showBankName)
+    this.$('input[type=radio]').bind('change', this.fixFoundationRadio)
+
+  fixFoundationRadio: =>
+    this.$('.radio.checked').removeClass('checked')
+    this.$('input[type=radio]:checked ~ .radio').addClass('checked')
+
+  submit: (event) ->
+    selectedBank = this.$('[name="payment[use_bank]"]:checked, [name="payment[use_bank]"]:hidden')
+    return if $.inArray(selectedBank.val(), ['new', '']) == -1
+
+    event.preventDefault()
+
+    that = this
+    routing_number_path = $('[data-routing-number-path]').
+                            data('routing-number-path').
+                            replace('id', this.$('#payment_routing_number').val())
+
+    error_handler = ->
+      that.Flash.message('<%= I18n.t('neighborly.balanced.bankaccount.payments.new.errors.routing_number') %>')
+      $.rails.enableFormElements($('.neighborly-balanced-bankaccount-form'))
+      $submit = $('.neighborly-balanced-bankaccount-form input[type=submit]')
+      $submit.val($submit.data('enable-with'))
+
+    $.getJSON routing_number_path, (response) ->
+      if response.ok
+        that.Flash.remove()
+        that.$('.simple_form.payment').attr('novalidate', '')
+
+        that.submitToBalanced(selectedBank)
+      else
+        error_handler()
+    .error ->
+      error_handler()
+
+  submitToBalanced: (selectedBank) ->
+    $.rails.disableFormElements($('.neighborly-balanced-bankaccount-form'))
+    bankAccountData =
+      name:           this.$('#payment_account_holder_name').val()
+      routing_number: this.$('#payment_routing_number').val()
+      account_number: this.$('#payment_account_number').val()
+      type:           this.$('input[name="payment[account_type]"]:checked').val()
+
+    this.$('[data-balanced-bank-account-input]').val('')
+
+    balanced_callback_for_201 = (response) ->
+      selectedBank.val(response.data.uri)
+      $('[data-balanced-bankaccount-form] form').submit()
+
+    that = this
+    balanced_callback_for_402 = (response) ->
+      that.Flash.message('<%= I18n.t('neighborly.balanced.bankaccount.payments.new.errors.bank_error') %>')
+      $.rails.enableFormElements($('.neighborly-balanced-bankaccount-form'))
+      $submit = $('.neighborly-balanced-bankaccount-form input[type=submit]')
+      $submit.val($submit.data('enable-with'))
+
+    balanced.bankAccount.create bankAccountData, (response) ->
+      switch response.status
+        when 201 then balanced_callback_for_201(response)
+        when 402 then balanced_callback_for_402(response)
+
+  showBankName: (e)=>
+    number = $.trim(this.$('#payment_routing_number').val())
+    unless number.length is 9
+      this.$('#payment_bank_name').val('')
+      return
+
+    $.getJSON $('[data-routing-number-path]').data('routing-number-path').replace('id', number), (response) =>
+      if response.ok
+        this.$('#payment_bank_name').val($.trim(response.bank_name))
+      else
+        this.$('#payment_bank_name').val('')
+
+
+

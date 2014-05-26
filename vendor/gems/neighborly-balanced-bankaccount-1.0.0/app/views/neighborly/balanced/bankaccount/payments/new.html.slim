@@ -1,0 +1,93 @@
+= initjs_tag app_name: 'Neighborly', partial: true
+
+.neighborly-balanced-bankaccount-form[data-balanced-bankaccount-form data-balanced-marketplace-id=@balanced_marketplace_id data-routing-number-path=routing_number_url(:id, protocol: request.protocol)]
+  = simple_form_for :payment, url: payments_path do |f|
+    = f.input :contribution_id, as: :hidden, input_html: { value: params[:contribution_id] }
+    = f.input :pay_fee, as: :hidden, input_html: { value: 1, 'data-pay-payment-fee' => '' }
+    section.highlighted[class="#{'use-existing-item' if @bank_account.present?}"]
+
+      - if @bank_account
+        section.use-existing-item.row
+          .large-12.columns.title
+            h4 = t('.bank_accounts.title')
+            p = t('.bank_accounts.subtitle')
+
+          .large-12.columns
+            .bank-box
+              label.row
+                dl
+                  .large-1.columns
+                    = f.radio_button :use_bank, @bank_account.uri, { class: 'use-bank', checked: true, label: false }
+                  .large-5.columns
+                    dt.hide
+                    dd = @bank_account.account_number
+                  .large-6.columns.bank_name
+                    dt.hine
+                    dd = @bank_account.bank_name
+      - else
+          = f.input :use_bank, as: :hidden
+          .row
+            .large-12.columns.title
+              h4 = t('.bankaccount.title')
+
+    section.row
+      .large-12.columns
+        .bank-box[class="#{'new-bank' unless @bank_account.present?}"]
+           .row
+             - if @bank_account.present?
+               label
+                  .large-1.columns
+                    = f.radio_button :use_bank, 'new', { class: 'use-bank', checked: false, label: false }
+                  .large-8.columns
+                    = t('.replace_bank')
+                  .large-3.columns.bank_name
+
+             .add-new-bankaccount-form[class="#{'hide with-other-bank' if @bank_account.present?}"]
+                .large-12.columns.check-numbers
+                  = image_tag('payments/check-numbers.png')
+                .large-12.columns
+                  .row
+                    .large-8.columns
+                      = f.input :account_holder_name, required: @bank_account.blank?, input_html: { 'data-balanced-bank-account-input' => '' }
+
+                    .large-4.columns
+                      = f.input :account_type, as: :radio_buttons, checked: 'checking', required: @bank_account.blank?, collection: [['Checking', 'checking'], ['Savings', 'savings']]
+
+                  .row
+                    .large-3.columns
+                      = f.input :routing_number, required: @bank_account.blank?, input_html: { 'data-balanced-bank-account-input' => '' }
+
+                    .large-4.columns
+                      = f.input :account_number, required: @bank_account.blank?, input_html: { 'data-balanced-bank-account-input' => '' }
+
+                    .large-5.columns
+                      = f.input :bank_name, disabled: true, input_html: { 'data-balanced-bank-account-input' => '' }
+
+    section.user-informations.highlighted
+      = f.simple_fields_for :user do |fu|
+        .row
+          .large-12.columns.title
+            h4 = t('.billing.title')
+
+          .large-6.columns
+            = fu.input :name, input_html: { value: @customer.name }, placeholder: ''
+          .large-6.columns
+            = fu.input :address_street, input_html: { value: @customer.address.try(:[], :line1) }
+          .large-5.columns
+            = fu.input :address_city, input_html: { value: @customer.address.try(:[], :city) }
+          .large-4.columns
+            = fu.input :address_state, as: :select, collection: State.array, selected: @customer.address.try(:[], :state), include_blank: false
+          .large-3.columns
+            = fu.input :address_zip_code, input_html: { value: @customer.address.try(:[], :postal_code) }
+    section.row
+      .large-12.columns.terms
+        = t('.terms', link: link_to(t('.terms-link'), main_app.terms_path(), data: { 'reveal-id' => 'terms-modal', 'reveal-ajax' => true })).html_safe
+
+      .large-6.columns.submit
+        = submit_tag t('.confirm'), class: 'button', data: { disable_with: t('.proccessing'), enable_with: t('.confirm') }
+
+      .large-6.columns.text-right.balanced-seal
+        = link_to image_tag('https://balancedpowered.s3.amazonaws.com/secured-1-4.png'), 'https://www.balancedpayments.com/'
+
+  #terms-modal.reveal-modal.small.fixed
+

@@ -1,0 +1,12 @@
+en:
+  simple_form:
+    labels:
+      payment:
+        card_number: 'Card Number'
+        security_code: 'CVC'
+        user:
+          name: 'Name (as it appears on card)'
+          address_street: 'Street Address'
+          address_city: 'City'
+          address_state: 'State'
+          address_zip_code: 'Zip Code'

@@ -20,9 +20,9 @@ gem 'pg_search'
 gem 'schema_plus'
 
 # Payment engines
-gem 'neighborly-balanced-creditcard',  github: 'neighborly/neighborly-balanced-creditcard',  branch: :master
-gem 'neighborly-balanced-bankaccount', github: 'neighborly/neighborly-balanced-bankaccount', branch: :master
-gem 'neighborly-balanced',             github: 'neighborly/neighborly-balanced',             branch: :master
+gem 'neighborly-balanced-creditcard',  path: "vendor/gems/neighborly-balanced-creditcard-1.1.0"
+gem 'neighborly-balanced-bankaccount', path: "vendor/gems/neighborly-balanced-bankaccount-1.0.0"
+gem 'neighborly-balanced',             path: "vendor/gems/neighborly-balanced-1.1.0"
 
 # Neigbhor.ly Engines
 gem 'neighborly-admin', github: 'neighborly/neighborly-admin', branch: :master
@@ -137,3 +137,4 @@ gem 'remotipart', '~> 1.2.1'
 # FIXME: Not-anymore-on-development
 # Gems that are with 1 or more years on the vacuum
 gem 'weekdays'
+gem "stripe"

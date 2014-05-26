@@ -1,0 +1,32 @@
+---
+_type: event_callback
+occurred_at: '2014-03-19T22:02:18.998000Z'
+uri: "/events/EV247171c0afb211e3a5060660347b4daf/callbacks/CB4DdSYjHpCDYtMfqZeGbVd8"
+entity:
+  _type: bank_account_authentication
+  state: DEPOSIT_SUCCEEDED
+  created_at: '2014-03-19T22:02:18.599156Z'
+  uri: "/v1/bank_accounts/BAPGUSU1HHB5kWPcBmnxEq6/verifications/BZ1rtQKUp525uHLUJFFpbEi5"
+  updated_at: '2014-03-19T22:02:18.998920Z'
+  attempts: 0
+  _uris: {}
+  id: BZ1rtQKUp525uHLUJFFpbEi5
+  remaining_attempts: 3
+logs_uri: "/events/EV247171c0afb211e3a5060660347b4daf/callbacks/CB4DdSYjHpCDYtMfqZeGbVd8/logs"
+_uris:
+  callbacks_uri:
+    _type: page
+    key: callbacks
+  logs_uri:
+    _type: event_callback_log
+    key: logs
+callbacks_uri: "/events/EV247171c0afb211e3a5060660347b4daf/callbacks"
+callback_statuses:
+  failed: 0
+  retrying: 0
+  succeeded: 0
+  pending: 1
+type: bank_account_verification.deposited
+id: EV247171c0afb211e3a5060660347b4daf
+notification:
+  id: EV247171c0afb211e3a5060660347b4daf

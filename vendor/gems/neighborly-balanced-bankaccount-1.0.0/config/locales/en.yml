@@ -1,0 +1,56 @@
+en:
+  neighborly:
+    balanced:
+      bankaccount:
+        payments:
+          debit:
+            description: 'Contribution to %{project_name}'
+          new:
+            bankaccount:
+              title: 'Checkout using a Bank Account'
+            billing:
+              title: 'Billing Information'
+            terms: 'By contributing, I agree with the %{link}.'
+            terms-link: 'Terms of Use'
+            confirm: 'Confirm payment'
+            proccessing: 'Processing...'
+            errors:
+              bank_error: 'The Bank Account submitted is invalid.'
+              routing_number: 'The Routing Number is invalid.'
+            bank_accounts:
+              title: 'My Bank Account'
+              subtitle: 'You may only store one account at a time. Adding a new account will replace your existing one.'
+        accounts:
+          create:
+            success: 'Bank account successfully updated. We have started a new verification process, please check your email for next steps.'
+          new:
+            bankaccount:
+              title: 'My Bank Account'
+              subtitle: 'You may only store one account at a time. Adding a new account will replace your existing one.'
+            status: 'Account Status:'
+            account_verified: 'Account Verified'
+            account_unverified: 'Account Unverified'
+            verify: 'Verify now'
+            replace: 'Replace Bank Account'
+            add: 'Add Bank Account'
+            proccessing: 'Processing...'
+        confirmations:
+          new:
+            title: 'Confirm your bank account'
+            subtitle: 'Please enter the two amounts (in cents) we credited to your account. These can take up to three business days to appear in your account. Payments will be charged and added to the campaign once your account has been confirmed.'
+            remaining_attempts: 'Verification attempts remaining: %{value}'
+            bank_account_number: 'Account Number:'
+            bank_name: 'Bank Name:'
+            submit: 'Confirm Bank Account'
+            proccessing: 'Proccessing'
+            contributions:
+              title: 'Pending contributions'
+              value: 'Contribution value: <strong>%{value}</strong>'
+            errors:
+              bank_account_not_found: "You don't have any bank account to confirm, please add one."
+              already_confirmed: 'Your bank account has already been confirmed.'
+          create:
+            messages:
+              success: 'Successfully confirmed your bank account.'
+              unable_to_verify: 'Unable to verify. Please check the deposit amounts and enter them again.'
+              not_remaining_attempts: 'You have run out of verification attempts. We restarted the verification process, please check your email for next steps.'

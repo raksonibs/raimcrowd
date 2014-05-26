@@ -1,0 +1,14 @@
+- customer = Neighborly::Balanced::CustomerDecorator.new(Neighborly::Balanced::Customer.new(@notification.user, {}))
+
+|Howdy, #{@notification.user.display_name}!
+br
+br
+| You recently attempted to verify your bank account <b>#{customer.bank_account_name}</b> on Neighbor.ly and were unable to confirm the two deposits we made to your account. We will now restart the verification process.
+br
+ul
+  li Two deposits (each less than $1.00) will be placed in your account and should appear in your bank statement within 1-2 business days.
+  li Once the deposits have been made, you will receive an email with a link to verify your account using the two deposit amounts.
+br
+|High fives,
+br
+|The #{Configuration[:company_name]} Team
