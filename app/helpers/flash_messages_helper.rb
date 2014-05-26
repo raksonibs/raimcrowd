@@ -17,7 +17,7 @@ module FlashMessagesHelper
                          class:          html_classes_for_msg(name, message),
                          'data-alert' => 'true') do
 
-        concat(content.html_safe)
+        concat(content.flatten.join(", ").html_safe)
         concat(link_to('&times;'.html_safe, '#', class: 'close'))
       end)
     end
