@@ -18,7 +18,7 @@ Neighborly.SearchCities = (searchInputSelctor, mapCanvasSelector) ->
     autocomplete = new google.maps.places.Autocomplete(searchInput,
       types: ['(cities)']
       componentRestrictions:
-        country: 'us'
+        country: 'ca'
     )
     map = new google.maps.Map(mapCanvas, mapOptions)
     marker = new google.maps.Marker(map: map)
