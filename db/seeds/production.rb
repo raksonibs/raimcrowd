@@ -15,7 +15,7 @@ puts 'Creating Configuration entries...'
     email_system: 'no-reply@raiseanaim.org',
     email_no_reply: 'no-reply@raiseanaim.org',
     facebook_url: 'https://www.facebook.com/raimcanada',
-    facebook_app_id: 255971384512404,
+    facebook_app_id: 676933745694996,
     twitter_username: 'raimcanada',
     platform_fee: 0.05,
     support_forum: 'http://neighborly.uservoice.com/',

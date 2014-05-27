@@ -10,7 +10,7 @@
               = image_tag 'logo-icon.png', class: "loader-img"
 
 - if request.xhr?
-  = initjs_tag app_name: 'Neighborly', partial: true
+  = initjs_tag app_name: 'RaiseanAim', partial: true
   = yield :page_content
 - else
   = render template: 'users/edit'
