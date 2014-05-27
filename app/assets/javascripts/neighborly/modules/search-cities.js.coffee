@@ -10,7 +10,7 @@ Neighborly.SearchCities = (searchInputSelctor, mapCanvasSelector) ->
     searchInput = $(searchInputSelctor)[0]
     mapCanvas = $(mapCanvasSelector)[0]
     mapOptions =
-      center: new google.maps.LatLng(37.09024, -95.712891)
+      center: new google.maps.LatLng(58, -110)
       zoom: 3
       disableDefaultUI: true
       mapTypeId: google.maps.MapTypeId.ROADMAP
