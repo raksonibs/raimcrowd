@@ -10,7 +10,7 @@ puts 'Creating Configuration entries...'
     base_url: 'http://raiseanaim.org',
     blog_url: 'http://blog.raiseanaim.org',
     base_domain: 'raiseanaim.org',
-    email_contact: 'howdy@raiseanaim.org',
+    email_contact: 'contact@raiseanaim.org',
     email_payments: 'books@raiseanaim.org',
     email_system: 'no-reply@raiseanaim.org',
     email_no_reply: 'no-reply@raiseanaim.org',
