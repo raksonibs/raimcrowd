@@ -8,7 +8,7 @@ begin
       :authentication => :plain,
       :user_name      => ENV['SENDGRID_USERNAME'],
       :password       => ENV['SENDGRID_PASSWORD'],
-      :domain         => 'heroku.com',
+      :domain         => 'raiseanaim.org',
       :enable_starttls_auto => true
     }
     ActionMailer::Base.delivery_method = :smtp
