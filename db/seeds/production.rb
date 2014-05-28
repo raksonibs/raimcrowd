@@ -6,10 +6,10 @@ puts 'Creating Configuration entries...'
 
   {
     company_name: 'raiseanaim.org',
-    host: 'raiseanaim.herokuapp.com',
-    base_url: 'http://raiseanaim.herokuapp.com',
+    host: 'raiseanaim.org',
+    base_url: 'http://raiseanaim.org',
     blog_url: 'http://blog.raiseanaim.org',
-    base_domain: 'raiseanaim.herokuapp.com',
+    base_domain: 'raiseanaim.org',
     email_contact: 'howdy@raiseanaim.org',
     email_payments: 'books@raiseanaim.org',
     email_system: 'no-reply@raiseanaim.org',
