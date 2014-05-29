@@ -14,5 +14,5 @@ en:
           hint:
             password_length: '*must be at least 6 characters.'
           inputs:
-            submit: 'Join the Neighborhood'
+            submit: 'Join the RAim crowd'
             facebook: 'Sign up with Facebook'
