@@ -1,7 +1,7 @@
 en:
   projects:
     index:
-      title: 'Canadas Civic Crowdfunding Service for civic projects | Civic Crowdfunding | CSR '
+      title: "Canada's Civic Crowdfunding Service for civic projects | Civic Crowdfunding | CSR "
       recommended: 'Recommended'
       near: 'Projects Near'
       channels: 'Partners'
@@ -13,7 +13,7 @@ en:
         already_joined: 'Already joined? %{link}.'
         sign_in: 'Sign in'
       hero:
-        title: 'Canadas Civic Crowdfunding Service.'
+        title: Canada's Civic Crowdfunding Service.
         subtitle: "Building the future. With you."
       how-it-works:
         one:
