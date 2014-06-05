@@ -10,7 +10,7 @@ en:
       draft: 'draft'
     organization_type:
       municipality: 'Municipality'
-      neighborhood_organization: 'Neighborhood Organization'
+      neighborhood_organization: 'Community Organization'
       cid_bid: 'CID / BID'
       registered_nonprofit: 'Registered Nonprofit'
       public_private_partnership: 'Public-Private Partnership'
