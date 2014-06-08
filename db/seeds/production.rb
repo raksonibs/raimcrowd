@@ -77,9 +77,14 @@ puts 'Done!'
 puts 'Creating OauthProvider entries...'
 
   categories = %w{facebook twitter google_oauth2 linkedin}
-  categories.each do |name|
-    OauthProvider.create! name: name, path: name, secret: 'SOMETHING', key: 'SOMETHING'
-  end
+  oauth_providers = {
+    "facebook" => {:key => "676933745694996", :secret => "de246ea811c8f38d690ec64e045d65c5"},
+    "twitter" => {:key => "rKT1e8OqJMB6TqJ7CeXXvg", :secret => "2D6bpevXGoKqO4OOZw0G6JIEI6DqDScfjHwVA8rBgY"},
+    "google_oauth2" => {:key => "236971248892-nsgegbflmtlvh4p34fbe5l6p1e6j9f4c.apps.googleusercontent.com", :secret => "Bru8CHjqAlB3QQIwENqKk3jL"},
+    "linkedin" => {:key => "7709214kfy1d8k", :secret => "l9WEb9RkkbIoB3XN", :scope => "r_basicprofile"}
+  }
+  
+  OauthProvider.where(name: "facebook", path: "facebook").first_or_create, secret: 'SOMETHING', key: 'SOMETHING'
 
 puts '---------------------------------------------'
 puts 'Done!'

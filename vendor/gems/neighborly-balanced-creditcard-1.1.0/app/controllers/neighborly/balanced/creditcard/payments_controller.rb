@@ -24,8 +24,6 @@ module Neighborly::Balanced::Creditcard
       else
         card = use_card
       end
-
-      puts "USING CARD: #{card}"
       
       payment.checkout!(card)
 

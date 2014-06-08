@@ -40,9 +40,9 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
       updated: "You updated your account successfully."
     sessions:
-      signed_in: "Howdy, neighbor!"
+      signed_in: "Howdy, member!"
       signed_in_custom: 'Howdy, neighbor! Please <a href="%{link}">complete your profile</a> so we can talk you up, and give you full credit for being awesome!'
-      signed_out: "Bye neighbor. Safe travels, happy trails."
+      signed_out: "Bye member. Safe travels, happy trails."
     unlocks:
       send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
