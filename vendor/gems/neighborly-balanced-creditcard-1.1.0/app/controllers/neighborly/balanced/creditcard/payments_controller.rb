@@ -16,7 +16,18 @@ module Neighborly::Balanced::Creditcard
                                                        customer,
                                                        contribution,
                                                        resource_params)
-      payment.checkout!
+
+      use_card = resource_params.fetch(:use_card)
+
+      if use_card == "new"
+        card = customer.cards.first.id
+      else
+        card = use_card
+      end
+
+      puts "USING CARD: #{card}"
+      
+      payment.checkout!(card)
 
       if payment.successful?
         flash[:success] = t('success', scope: 'controllers.projects.contributions.pay')
@@ -46,7 +57,9 @@ module Neighborly::Balanced::Creditcard
     def attach_card_to_customer
       credit_card = resource_params.fetch(:use_card)
       unless customer.cards.any? { |c| c.id.eql? credit_card }
-        customer.card = params[:stripeToken]
+        if credit_card == "new"
+          customer.card = params[:stripeToken]
+        end
         customer.save
       end
     end

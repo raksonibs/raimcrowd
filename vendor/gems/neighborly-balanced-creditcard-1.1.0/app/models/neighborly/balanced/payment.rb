@@ -7,10 +7,11 @@ module Neighborly::Balanced
       @attrs        = attrs
     end
 
-    def checkout!
+    def checkout!(card)
       @charge = Stripe::Charge.create(amount:     contribution_amount_in_cents,
                              currency: "cad",
                              customer: @customer.id,
+                             card: card,
                              description: debit_description)
     rescue Balanced::PaymentRequired
       @contribution.cancel!
