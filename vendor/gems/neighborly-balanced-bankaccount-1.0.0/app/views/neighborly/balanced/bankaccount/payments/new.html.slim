@@ -70,7 +70,7 @@
             h4 = t('.billing.title')
 
           .large-6.columns
-            = fu.input :name, input_html: { value: @customer.name }, placeholder: ''
+            = fu.input :name, input_html: { value: @customer.description }, placeholder: ''
           .large-6.columns
             = fu.input :address_street, input_html: { value: @customer.address.try(:[], :line1) }
           .large-5.columns

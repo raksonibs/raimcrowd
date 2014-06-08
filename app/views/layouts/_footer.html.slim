@@ -13,7 +13,7 @@ footer
         li = link_to t('.faq'), faq_path
         li = link_to t('.legal'), privacy_path
         li = link_to t('.terms'), terms_path
-        li = mail_to Configuration[:email_contact], t('.contact')
+        li = link_to t('.contact'), companies_contact_path
 
     .large-4.medium-4.columns.now-acception-proposals
       h6

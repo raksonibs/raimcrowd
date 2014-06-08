@@ -21,7 +21,7 @@ en:
               expiration: 'Expiration:'
             errors:
               invalid_card: 'Sorry, card error. Please review and try again.'
-              marketplace_uri: 'Balanced URI is incorrect, please contact support.'
+              marketplace_uri: 'URL not found. Please contact support'
               card_tokenization_error: 'Sorry, card error. Please review and try again.'
               balanced: 'Sorry, something went wrong on our end. Please try again.'
           create:

@@ -8,19 +8,17 @@ module Neighborly::Balanced
     end
 
     def checkout!
-      @debit = @customer.debit(amount:     contribution_amount_in_cents,
-                               source_uri: @attrs.fetch(:use_card),
-                               appears_on_statement_as: ::Configuration[:balanced_appears_on_statement_as],
-                               description: debit_description,
-                               on_behalf_of_uri: project_owner_customer.uri,
-                               meta: meta)
+      @charge = Stripe::Charge.create(amount:     contribution_amount_in_cents,
+                             currency: "cad",
+                             customer: @customer.id,
+                             description: debit_description)
     rescue Balanced::PaymentRequired
       @contribution.cancel!
     else
       @contribution.confirm!
     ensure
       @contribution.update_attributes(
-        payment_id:                       @debit.try(:id),
+        payment_id:                       @charge.try(:id),
         payment_method:                   @engine_name,
         payment_service_fee:              fee_calculator.fees,
         payment_service_fee_paid_by_user: @attrs[:pay_fee]
@@ -44,11 +42,11 @@ module Neighborly::Balanced
     end
 
     def debit
-      @debit.try(:sanitize)
+      @charge.try(:sanitize)
     end
 
     def successful?
-      %w(pending succeeded).include? @debit.try(:status)
+      @charge.failure_code.blank?
     end
 
     private

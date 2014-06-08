@@ -43,6 +43,7 @@ head
     = javascript_include_tag "http://html5shiv.googlecode.com/svn/trunk/html5.js"
   = javascript_include_tag 'vendor/custom.modernizr', 'data-turbolinks-track' => true
   = javascript_include_tag :application, 'data-turbolinks-track' => true
+  script src="https://js.stripe.com/v2/" type="text/javascript" 
   = render 'layouts/analytics'
 body
   = initjs_tag app_name: 'Neighborly'
@@ -50,6 +51,13 @@ body
   = render 'layouts/loader'
   = render 'layouts/header'
   = flash_messages
+  - flash.each do |key, message|
+    .alert-container
+      div class="alert-#{key}"
+        .alert 
+          =message
+  - flash.clear
+
   /.row.content
   = yield
   = render 'layouts/footer'

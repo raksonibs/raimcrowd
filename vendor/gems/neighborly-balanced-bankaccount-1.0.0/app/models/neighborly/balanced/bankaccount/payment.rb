@@ -5,7 +5,7 @@ module Neighborly::Balanced::Bankaccount
                                source_uri: debit_resource_uri,
                                appears_on_statement_as: ::Configuration[:balanced_appears_on_statement_as],
                                description: debit_description,
-                               on_behalf_of_uri: project_owner_customer.uri,
+                               on_behalf_of_uri: project_owner_customer.id,
                                meta: meta)
       @contribution.confirm!
     rescue Balanced::BadRequest

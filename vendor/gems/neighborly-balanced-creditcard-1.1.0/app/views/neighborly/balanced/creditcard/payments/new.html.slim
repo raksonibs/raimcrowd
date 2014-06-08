@@ -1,7 +1,11 @@
 = initjs_tag app_name: 'RaiseanAim', partial: true
 
+
+
+
 .neighborly-balanced-creditcard-form[data-balanced-credit-card-form data-balanced-marketplace-id=@balanced_marketplace_id]
-  = simple_form_for :payment, url: payments_path, html: { novalidate: '' } do |f|
+  = simple_form_for :payment, url: payments_path, html: { novalidate: '', id: "payment-form" } do |f|
+    span class="payment-errors"
     = f.input :contribution_id, as: :hidden, input_html: { value: params[:contribution_id] }
     = f.input :pay_fee, as: :hidden, input_html: { value: 1, 'data-pay-payment-fee' => '' }
     section.highlighted[class="#{'use-existing-item' if @cards.any?}"]
@@ -16,13 +20,13 @@
                 label.row
                   dl
                     .large-1.columns
-                      = f.radio_button :use_card, card.uri, { checked: index.zero?, label: false }
+                      = f.radio_button :use_card, card.id, { checked: index.zero?, label: false }
                     .large-6.columns
                       dt.hide
-                      dd = t('.cards.card_ending_in', brand: card.brand, last_four: card.last_four)
+                      dd = t('.cards.card_ending_in', brand: card.type, last_four: card.last4)
                     .large-5.columns.expiration
                       dt = t('.cards.expiration')
-                      dd = sprintf('%02i/%i', card.expiration_month, card.expiration_year)
+                      dd = sprintf('%02i/%i', card.exp_month, card.exp_year)
 
       - else
         = f.input :use_card, as: :hidden
@@ -47,19 +51,19 @@
             .large-12.columns.add-new-creditcard-form[class="#{'hide with-others-cards' if @cards.any?}"]
               .row
                 .large-5.columns
-                  = f.input :card_number, input_html: { 'data-balanced-credit-card-input' => '' }
+                  = f.input :card_number, input_html: { 'data-stripe' => 'number' }
                 .large-2.columns
-                  = f.input :security_code, maxlength: 4, input_html: { 'data-balanced-credit-card-input' => '' }
+                  = f.input :security_code, maxlength: 4, input_html: { 'data-stripe' => 'cvc' }
                 .large-5.columns
                   - date = Date.today + 1.month
                   = f.label :expiration
                   .row.collapse
                     .large-5.small-5.columns
-                      = select_month date, { use_two_digit_numbers: true }, { name: 'payment[expiration_month]', id: 'payment_expiration_month', 'data-balanced-credit-card-input' => '' }
+                      = select_month date, { use_two_digit_numbers: true }, { name: 'payment[expiration_month]', id: 'payment_expiration_month', 'data-stripe' => 'exp-month' }
                     .large-1.small-1.columns.text-center.divider
                       | /
                     .large-6.small-6.columns
-                      = select_year date, { start_year: date.year, end_year: date.year+15 }, { name: 'payment[expiration_year]', id: 'payment_expiration_year', 'data-balanced-credit-card-input' => '' }
+                      = select_year date, { start_year: date.year, end_year: date.year+15 }, { name: 'payment[expiration_year]', id: 'payment_expiration_year', 'data-stripe' => 'exp-year' }
 
     section.user-informations.highlighted
       = f.simple_fields_for :user do |fu|
@@ -69,16 +73,16 @@
 
         .row
           .large-6.columns
-            = fu.input :name, required: false, input_html: { value: @customer.name }
+            = fu.input :name, required: false, input_html: { value: current_user.name }
           .large-6.columns
-            = fu.input :address_street, required: false, input_html: { value: @customer.address.try(:[], :line1) }
+            = fu.input :address_street, required: false, input_html: { 'data-stripe' => 'address_line1' }
         .row
           .large-5.columns
-            = fu.input :address_city, required: false, input_html: { value: @customer.address.try(:[], :city) }
+            = fu.input :address_city, required: false, input_html: { 'data-stripe' => 'address_city' }
           .large-4.columns
-            = fu.input :address_state, required: false, as: :select, collection: State.array, selected: @customer.address.try(:[], :state), include_blank: false
+            = fu.input :address_state, required: false, as: :select, collection: State.array, selected: nil, include_blank: false, input_html: { 'data-stripe' => 'address_state'}
           .large-3.columns
-            = fu.input :address_zip_code, input_html: { value: @customer.address.try(:[], :postal_code) }
+            = fu.input :address_zip_code, input_html: { 'data-stripe' => 'address_zip' }
 
     section
       .row
@@ -89,6 +93,43 @@
         .large-6.columns.submit
           = f.button :submit, t('.confirm'), data: { disable_with: t('.proccessing'), enable_with: t('.confirm') }
         .large-6.columns.text-right.balanced-seal
-          = link_to image_tag('https://balancedpowered.s3.amazonaws.com/secured-1-4.png'), 'https://www.balancedpayments.com/', target: :blank
+          = link_to image_tag('https://stripe.com/img/about/logos/badge/small/dark@2x.png'), 'https://www.stripe.com/', target: :blank
 
   #terms-modal.reveal-modal.small.fixed
+
+
+
+javascript:
+  Stripe.setPublishableKey('pk_test_85flsBiMemmdXEytx60SWqsh');
+  jQuery(function($) {
+    $('#payment-form').submit(function(event) {
+      var $form = $(this);
+
+      // Disable the submit button to prevent repeated clicks
+      $form.find('button').prop('disabled', true);
+
+      Stripe.card.createToken($form, stripeResponseHandler);
+
+      // Prevent the form from submitting with the default action
+      return false;
+    });
+
+    var stripeResponseHandler = function(status, response) {
+      var $form = $('#payment-form');
+
+      if (response.error) {
+        // Show the errors on the form
+        $form.find('.payment-errors').text(response.error.message);
+        $form.find('button').prop('disabled', false);
+      } else {
+        // token contains id, last4, and card type
+        var token = response.id;
+        // Insert the token into the form so it gets submitted to the server
+        $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+        // and submit
+        $form.get(0).submit();
+      }
+    };
+  });
+
+
