@@ -5,7 +5,7 @@ class Companies::ContactsController < ApplicationController
 
   def create
     create! do
-      flash.notice = t('controllers.companies.contacts.create.success'
+      flash.notice = t('controllers.companies.contacts.create.success')
       redirect_to root_path
     end
   end
