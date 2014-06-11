@@ -47,9 +47,18 @@ class Projects::ContributionsController < ApplicationController
 
     create! do |success, failure|
       success.html do
-        session[:thank_you_contribution_id] = @contribution.id
-        flash.delete(:notice)
-        return redirect_to edit_project_contribution_path(project_id: @project, id: @contribution.id)
+        if @contribution.value == 0
+          @contribution.confirm!
+          flash[:notice] = t('success', scope: 'controllers.projects.contributions.pay')
+          return redirect_to main_app.project_contribution_path(
+            @contribution.project.permalink,
+            @contribution.id
+          )
+        else
+          session[:thank_you_contribution_id] = @contribution.id
+          flash.delete(:notice)
+          return redirect_to edit_project_contribution_path(project_id: @project, id: @contribution.id)
+        end
       end
 
       failure.html do
