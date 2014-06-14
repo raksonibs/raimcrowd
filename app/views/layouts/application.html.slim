@@ -55,7 +55,8 @@ body
     .alert-container
       div class="alert-#{key}"
         .alert 
-          =message
+          - message = message[:message] if message.is_a? Hash and message.has_key? :message
+          =message.html_safe
   - flash.clear
 
   /.row.content
