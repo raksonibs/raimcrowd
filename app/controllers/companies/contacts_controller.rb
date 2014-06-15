@@ -4,10 +4,7 @@ class Companies::ContactsController < ApplicationController
   actions :new, :create
 
   def create
-    create! do
-      flash.notice = t('controllers.companies.contacts.create.success')
-      redirect_to root_path
-    end
+    create!(:notice => t('controllers.companies.contacts.create.success'))
   end
 
   protected

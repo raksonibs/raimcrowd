@@ -4,6 +4,6 @@ class Users::ProjectsController < ApplicationController
   belongs_to :user
 
   def collection
-    @projects ||= end_of_association_chain
+    @projects ||= end_of_association_chain.without_state("deleted")
   end
 end
