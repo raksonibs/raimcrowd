@@ -14,7 +14,10 @@
         tbody
           - collection.each do |project|
             tr
-              td= link_to project.id, project_path(project)
+              - if project.state == "deleted"
+                td Deleted
+              - else
+                td= link_to project.id, project_path(project)
               td title=project.name
                 = link_to edit_project_path(project) do
                   = image_tag project.display_image, size: '50', class: 'project-imgage'
