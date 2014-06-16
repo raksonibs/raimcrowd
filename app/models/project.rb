@@ -173,6 +173,17 @@ class Project < ActiveRecord::Base
     User.where(email: email).first
   end
 
+  def embed_url
+    url = video_url.sub("http:", "").sub("https:", "")
+    if video_url.include? "vimeo"
+      url = url.sub("vimeo.com/", "player.vimeo.com/video/")
+    elsif video_url.include? "youtube" and !video_url.include? "embed"
+      url = url.sub("youtube.com/", "youtube.com/embed/")
+    end
+
+    url
+  end
+
   def last_channel
     @last_channel ||= channels.last
   end
