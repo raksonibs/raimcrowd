@@ -19,16 +19,18 @@
               - else
                 td= link_to project.id, project_path(project)
               td title=project.name
-                = link_to edit_project_path(project) do
-                  = image_tag project.display_image, size: '50', class: 'project-imgage'
+                - if project.state != "deleted"
+                  = link_to edit_project_path(project) do
+                    = image_tag project.display_image, size: '50', class: 'project-imgage'
               td= project.name
               td
                 = "#{project.display_pledged} / #{project.display_goal}"
               td= project.display_expires_at
               td= project.total_contributions
               td.text-right
-                = link_to edit_project_path(project), class: 'button tiny' do
-                  i.icon-et-pencil
+                - if project.state != "deleted"
+                  = link_to edit_project_path(project), class: 'button tiny' do
+                    i.icon-et-pencil
 
 - if request.xhr?
   = yield :page_content
