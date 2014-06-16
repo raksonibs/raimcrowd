@@ -178,7 +178,7 @@ class Project < ActiveRecord::Base
     if video_url.include? "vimeo"
       url = url.sub("vimeo.com/", "player.vimeo.com/video/")
     elsif video_url.include? "youtube" and !video_url.include? "embed"
-      url = url.sub("youtube.com/", "youtube.com/embed/").replace("watch?v=", "")
+      url = url.sub("youtube.com/", "youtube.com/embed/").sub("watch?v=", "")
     end
 
     url
