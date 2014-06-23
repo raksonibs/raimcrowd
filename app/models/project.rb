@@ -174,11 +174,13 @@ class Project < ActiveRecord::Base
   end
 
   def embed_url
-    url = video_url.sub("http:", "").sub("https:", "")
-    if video_url.include? "vimeo"
-      url = url.sub("vimeo.com/", "player.vimeo.com/video/")
-    elsif video_url.include? "youtube" and !video_url.include? "embed"
-      url = url.sub("youtube.com/", "youtube.com/embed/").sub("watch?v=", "")
+    if video_url.present?
+      url = video_url.sub("http:", "").sub("https:", "")
+      if video_url.include? "vimeo"
+        url = url.sub("vimeo.com/", "player.vimeo.com/video/")
+      elsif video_url.include? "youtube" and !video_url.include? "embed"
+        url = url.sub("youtube.com/", "youtube.com/embed/").sub("watch?v=", "")
+      end
     end
 
     url
