@@ -15,7 +15,7 @@ en:
         updates: 'Updates'
         faqs: 'FAQs'
         comments: 'Comments'
-        contributions: 'Neighbors'
+        contributions: 'Raisers'
         budget: 'Budget'
         terms: 'Terms'
         reports: 'Reports'
@@ -38,7 +38,7 @@ en:
       edit: 'Edit campaign'
       share:
         title: 'Get your friends involved'
-      no-neighbors: "No neighbors yet. Be the first!"
+      no-neighbors: "No raisers yet. Be the first!"
       author:
         about: 'About %{name}'
       in_partnership_with: 'In Partnership With'
