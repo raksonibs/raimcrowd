@@ -23,5 +23,5 @@ br/
 
     .large-7.small-12.medium-12.column.video-embed-wrapper
       h5 = t('.campaign_video')
-      iframe frameborder='0' height=video_height width=video_width src=video_embed_project_path(@project)
-      form.html= text_area_tag 'project-video-embed-html', '<iframe frameborder="0" height="' + video_height + '" src="' + video_embed_project_url(@project) + '" width="' + video_width + '"></iframe>', readonly: true
+      iframe frameborder='0' height=video_height width=video_width src=@project.embed_url
+      form.html= text_area_tag 'project-video-embed-html', '<iframe frameborder="0" height="' + video_height + '" src="' + @project.embed_url + '" width="' + video_width + '"></iframe>', readonly: true
