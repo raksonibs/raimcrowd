@@ -171,7 +171,7 @@
 
       - if @project.total_contributions > 0
         section.custom.neighbors-behind-this
-          .title = t('.neighbors_behind_this')
+          .title Raisers Behind This
           .list
             - for contribution in @project.contributions.available_to_display.order("RANDOM()").limit(15)
               - if contribution.anonymous
