@@ -11,19 +11,19 @@
     .row
       .large-4.medium-4.columns.one
         h4 = t('.how-it-works.one.headline' )
-        p
+        p.text
           = t('.how-it-works.one.text')
-          = link_to t('.how-it-works.one.button'), companies_contact_path, class: 'button'
+        p = link_to t('.how-it-works.one.button'), companies_contact_path, class: 'button'
       .large-4.medium-4.columns.two
         h4 = t('.how-it-works.two.headline' )
-        p
+        p.text1
           = t('.how-it-works.two.text')
-          = link_to t('.how-it-works.two.button'), start_path, class: 'button'
+        p = link_to t('.how-it-works.two.button'), start_path, class: 'button'
       .large-4.medium-4.columns.three
         h4 = t('.how-it-works.three.headline' )
-        p
+        p.text
           = t('.how-it-works.three.text')
-          = link_to t('.how-it-works.three.button'), discover_path, class: 'button'
+        p = link_to t('.how-it-works.three.button'), discover_path, class: 'button'
 
   section.projects
     .row

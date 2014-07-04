@@ -1,7 +1,7 @@
 en:
   projects:
     index:
-      title: "Canadas Civic Crowdfunding Service™ | CSR | Civic Engagement"
+      title: "Canadian Civic Crowdfunding Service | CSR | Civic Engagement | Student Engagement Portal"
       recommended: 'Recommended'
       near: 'Projects Near'
       channels: 'Partners'
@@ -13,20 +13,20 @@ en:
         already_joined: 'Already joined? %{link}.'
         sign_in: 'Sign in'
       hero:
-        title: Canada's Civic Crowdfunding Service.
+        title: Canadian Civic Crowdfunding Service & Student Engagement Portal
         subtitle: "Building the future. With you."
       how-it-works:
         one:
           headline: 'For Community Stakholders'
-          text: 'RAim is the best way to connect with your local customer base through community investment.'
+          text: 'RAim is the best way for local corporations to connect with their customer base through community investment.  Community stakeholders strengthen ties with local organizations.  Want to know more?'
           button: 'Request a Demo'
         two:
           headline: 'For Local Governments and Non-Profits'
-          text: "If you have civic projects in need of new funding sources, you've come to the right place."
+          text: "If you have civic projects that can benefit from civic engagement or participatory budgeting, you've come to the right place."
           button: 'Raise Money'
         three:
           headline: 'For Canadian Citizens'
-          text: 'Earn rewards while helping to build Canadian cities? Welcome to the RAim community.'
+          text: 'Earn rewards while helping to build Canadian cities? Want to participate in City building? Take charge of where your tax dollars are spent.  Welcome to the RAim Crowd.'
           button: 'Find Projects'
       start-one:
         title: 'Have a civic natured project/initiative in need of funding?'

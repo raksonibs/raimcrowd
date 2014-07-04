@@ -1,5 +1,7 @@
 class StaticController < ApplicationController
 
+  def careers
+  end
   def terms
     render layout: false if request.xhr?
   end

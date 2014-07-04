@@ -19,6 +19,7 @@ Neighborly::Application.routes.draw do
     post '/sign_up', to: 'devise/registrations#create', as: :sign_up
   end
 
+  get "/careers" => "static#careers"
   get '/thank_you' => "static#thank_you"
 
   check_user_admin = lambda { |request| request.env["warden"].authenticate? and request.env['warden'].user.admin }
