@@ -1,9 +1,23 @@
 footer
   .row
-    .large-8.medium-8.columns.quick-links
+    .large-4.medium-4.columns.quick-links
+      h6
+        i.icon-et-info-circled
+        | Help
+      ul
+        li = link_to t('.discover'), discover_path
+        li = link_to t('.start_campaign'), start_path
+        li = link_to t('.about'), about_path
+        li = link_to t('.how_it_works'), how_it_works_path
+        li = link_to t('.faq'), faq_path
+        li = link_to t('.legal'), privacy_path
+        li = link_to t('.terms'), terms_path
+        li = link_to t('.contact'), "/companies/contacts"
+
+    .large-4.medium-4.columns.quick-links
       h6
         i.icon-et-globe
-        = "Links"
+        | About Us
 
       ul
         li = link_to "The Canadian Civic Crowdfunding Daily", "https://paper.li/raimcanada/1403841088"
