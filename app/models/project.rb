@@ -203,13 +203,17 @@ class Project < ActiveRecord::Base
     visible.select('DISTINCT address_city, address_state').order('address_city, address_state').map(&:location)
   end
 
+  after_initialize :default_values
+
   private
   def self.get_routes
     routes = Rails.application.routes.routes.map do |r|
       r.path.spec.to_s.split('/').second.to_s.gsub(/\(.*?\)/, '')
     end
     routes.compact.uniq
+  end
 
+  def default_values
     self.goal = 10 if self.goal == 0
   end
 end
