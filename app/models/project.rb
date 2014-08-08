@@ -214,6 +214,9 @@ class Project < ActiveRecord::Base
   end
 
   def default_values
-    self.goal = 10 if self.goal == 0
+    if self.goal == 0
+      self.goal = 10 
+      self.save
+    end
   end
 end
