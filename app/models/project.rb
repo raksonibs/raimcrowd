@@ -209,5 +209,7 @@ class Project < ActiveRecord::Base
       r.path.spec.to_s.split('/').second.to_s.gsub(/\(.*?\)/, '')
     end
     routes.compact.uniq
+
+    self.goal = 10 if self.goal == 0
   end
 end
