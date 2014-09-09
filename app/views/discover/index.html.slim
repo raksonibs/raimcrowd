@@ -28,17 +28,17 @@
       .row
         .large-12.columns
           h2 = t('.title')
-          = form_tag discover_path, method: 'GET', class: 'discover-form row' do
-            .large-3.small-6.columns
-              = select_tag :near, options_for_select(Project.locations, @filters[:near]), prompt: t('.near'), class: 'near-input'
-            .large-3.small-6.columns
-              = select_tag :category, options_for_select(Category.with_projects, @filters[:category]), prompt: t('.category'), class: 'category-input'
-            .large-3.small-6.columns
-              = select_tag :filter, options_for_select(@avaliable_filters, @filters[:filter]), prompt: t('.filter'), class: 'filter-input'
-            .search.large-3.small-6.columns
-              = text_field_tag :search, nil, value: params[:search], placeholder: 'Search...', class: 'search-input'
-              = link_to '#search', class: 'search-button' do
-                i.icon-et-search
+          # = form_tag discover_path, method: 'GET', class: 'discover-form row' do
+          #   .large-3.small-6.columns
+          #     = select_tag :near, options_for_select(Project.locations, @filters[:near]), prompt: t('.near'), class: 'near-input'
+          #   .large-3.small-6.columns
+          #     = select_tag :category, options_for_select(Category.with_projects, @filters[:category]), prompt: t('.category'), class: 'category-input'
+          #   .large-3.small-6.columns
+          #     = select_tag :filter, options_for_select(@avaliable_filters, @filters[:filter]), prompt: t('.filter'), class: 'filter-input'
+          #   .search.large-3.small-6.columns
+          #     = text_field_tag :search, nil, value: params[:search], placeholder: 'Search...', class: 'search-input'
+          #     = link_to '#search', class: 'search-button' do
+          #       i.icon-et-search
 
           .tags
             strong = t('.tags')
