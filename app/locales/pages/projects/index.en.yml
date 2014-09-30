@@ -1,7 +1,7 @@
 en:
   projects:
     index:
-      title: "Canadian Civic Crowdfunding Service | CSR | Civic Engagement | Student Engagement Portal"
+      title: "Collaborative Community Building Toolkit for Cities | CSR | Civic Engagement | Student Engagement"
       recommended: 'Recommended'
       near: 'Projects Near'
       channels: 'Partners'
@@ -13,21 +13,21 @@ en:
         already_joined: 'Already joined? %{link}.'
         sign_in: 'Sign in'
       hero:
-        title: Canadian Civic Crowdfunding Service & Student Engagement Portal
-        subtitle: "Building the future. With you."
+        title: Collaborative Community Building Toolkit
+        subtitle: "Civic Engagement. Participation. Skill Building"
       how-it-works:
         one:
-          headline: 'For Community Stakholders'
-          text: 'RAim is the best way for local corporations to connect with their customer base through community investment.  Community stakeholders strengthen ties with local organizations.  Want to know more?'
+          headline: 'For Community Stakeholders'
+          text: 'The best way for local corporations to connect with their customer base through community investment.  Community stakeholders strengthen ties with local organizations.  Want to know more?'
           button: 'Request a Demo'
         two:
           headline: 'For Local Governments and Non-Profits'
           text: "If you have civic projects that can benefit from civic engagement or participatory budgeting, you've come to the right place."
-          button: 'Raise Money'
+          button: 'Civic Participation'
         three:
-          headline: 'For Canadian Citizens'
-          text: 'Earn rewards while helping to build Canadian cities? Want to participate in City building? Take charge of where your tax dollars are spent.  Welcome to the RAim Crowd.'
-          button: 'Find Projects'
+          headline: 'For You'
+          text: 'Pitch your idea and get community support. Earn rewards or tax exempt income. Pledge services. Welcome to the RaimCrowd.'
+          button: 'Aim'
       start-one:
-        title: 'Have a civic natured project/initiative in need of funding?'
-        button: 'RaiseanAim'
+        title: 'What do you want to do to help your community?'
+        button: 'Pitch Your Idea'
