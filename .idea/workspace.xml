@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e62a32c6-7f37-449b-a1f4-0d91358eeffe" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/neighborly_ograph_logo.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static/about.html.slim" afterPath="$PROJECT_DIR$/app/views/static/about.html.slim" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/locales/modules/header.en.yml" afterPath="$PROJECT_DIR$/app/locales/modules/header.en.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/locales/pages/projects/index.en.yml" afterPath="$PROJECT_DIR$/app/locales/pages/projects/index.en.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/locales/pages/projects/start.en.yml" afterPath="$PROJECT_DIR$/app/locales/pages/projects/start.en.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="raiseanaim.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,9 +47,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/locales/pages/projects/index.en.yml" />
         <option value="$PROJECT_DIR$/app/locales/pages/projects/start.en.yml" />
         <option value="$PROJECT_DIR$/app/locales/modules/header.en.yml" />
+        <option value="$PROJECT_DIR$/app/locales/pages/projects/index.en.yml" />
+        <option value="$PROJECT_DIR$/app/views/static/about.html.slim" />
       </list>
     </option>
   </component>
@@ -406,26 +405,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/locales/pages/projects/index.en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="29" max-vertical-offset="585">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/locales/pages/projects/start.en.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
           <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/locales/modules/header.en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4444447" vertical-offset="0" max-vertical-offset="240">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -502,6 +485,46 @@
     <entry file="file://$PROJECT_DIR$/app/assets/images/home-hero.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_disqus_count.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="373">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static/about.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.4363058" vertical-offset="0" max-vertical-offset="975">
+          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="2" max-vertical-offset="855">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/locales/pages/projects/index.en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3861111" vertical-offset="86" max-vertical-offset="585">
+          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/locales/modules/header.en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44235924" vertical-offset="0" max-vertical-offset="373">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/images/bg-company-contact.jpg">

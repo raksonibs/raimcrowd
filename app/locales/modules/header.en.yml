@@ -1,6 +1,7 @@
 en:
   layouts:
     header:
+      about: "About us"
       sign-out: 'Log out'
       sign-up: 'Join'
       sign-in: 'Log in'
