@@ -1,45 +1,45 @@
 en:
   projects:
     start:
-      title: "AN INNOVATIVE WAY TO BRING TO LIFE - CANADIAN CIVIC NATURED PROJECTS/INITIATIVES THAT YOU ARE PASSIONATE ABOUT"
-      get-started: 'Get Started'
+      title: "An innovative way to build your neighborhoods, they way you want while getting something out of your investment"
+      get-started: 'Start'
       steps:
         first:
-          title: '1. Submit an Idea'
-          description: "The first step of getting started is getting your idea out! We'll review it to make sure it fits."
+          title: '1. Submit an Idea & Gather Community Support'
+          description: "The first step of getting started is getting your idea out!"
         second:
-          title: '2. Plan Your Project'
-          description: "It takes more than an idea, so while we are reviewing, you'll be getting all of your ducks in a row."
+          title: '2. Plan for Implementation & Reach a Threshold of supporters '
+          description: "It takes more than an idea. If you reach a threshold of 50 to 100 people supporting your idea, it will be referred to the appropriate agency for endorsement, support and/or funding"
         third:
-          title: '3. Launch Your Campaign'
-          description: "Once your project is approved, you'll ready to go live and start raising money!"
+          title: '3. Project Approved for Civic Crowdfunding & Crowdsourcing'
+          description: "Once an IDEA gets converted into a PROJECT with community support behind it, it GETS DONE through participatory budgeting, municipal funding, crowdfunding, crowdsourcing & CSR!"
       who:
-        title: 'Who can run a campaign?'
+        title: 'Who can own a project?'
         local-governments: 'Local Governments'
         nonprofits: 'Nonprofits'
         neighborhood-organizations: 'Community Organizations'
         description: "Community improvement shouldn't be limited to any one group or any one geography. Any Canadian resident is welcome to propose a project on RaiseanAim but campaigns must be owned by a local government, nonprofit, neighborhood organization or other non-governmental organization. This one, simple requirement helps to ensure that the projects you give to  handle your contributions responsibly."
       work:
-        title: 'A successful campaign takes some work.'
+        title: 'A successful project takes some work.'
         subtitle: "Here's what you'll need:"
         team:
           title: 'A Strong Team'
           description: "In order to receive the greatest return, you'll need an active and engaged team backed by a civic minded organization."
         imagery:
           title: 'Beautiful Imagery'
-          description: 'A picture is worth a thousand words. Engage your contributors with images that capture their attention.'
+          description: 'A picture is worth a thousand words. Engage your contributors with images that capture their attention and feed their imagination.'
         video:
           title: 'A Powerful Video'
-          description: 'A video is the very best way to summarize your project allow contributors to get a glimpse into your organization.'
+          description: 'A video is the very best way to summarize your project & allow folks to get a glimpse into what the heck your trying to do.'
         detailed:
           title: 'Detailed Copy'
           description: 'Explain your project in detail. The more users know about your project and how you plan to use their money, the more likely they are to contribute.'
         rewards:
-          title: 'Compelling Rewards'
-          description: 'Incentivize contributors further by offering rewards as icing on the cake.'
+          title: 'Compelling Rewards or Tax-Exempt income'
+          description: 'Incentivize contributors further by offering rewards as icing on the cake.  We are working with cities on the best way for you to make an earning from co-investing with your city. '
         engagement:
           title: 'Continual Engagement'
-          description: 'Stay connected with your current supporters while spreading the message to new one. Engagement is key to a successful campaign.'
+          description: 'Stay connected with your current supporters while spreading the message. Engagement is key to a successful project.'
       inspiration:
         title: 'Need a little inspiration?'
-        subtitle: 'Check out these successfully funded campaigns:'
+        subtitle: 'Check out these projects:'
