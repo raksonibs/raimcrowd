@@ -13,10 +13,9 @@ en:
         already_joined: 'Already joined? %{link}.'
         sign_in: 'Sign in'
       hero:
-        title: Collaborative Community Building Toolkit
-        subtitle: "BETA Launch OCTOBER 6 - 10"
+        title: Collaborative Community Building Toolkit --- BETA LAUNCH OCTOBER 6 to 10
+        subtitle: "Contact us to find out more and how/when can you pitch an idea! We are accepting proposals but no projects will be launched till we have successfully transitioned into BETA Between -- OCTOBER 6 to 10--"
 
-        title: 'Contact us to find out how you can contribute'
       how-it-works:
         one:
           headline: 'For Community Stakeholders'
