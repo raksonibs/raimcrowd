@@ -15,6 +15,8 @@ en:
       hero:
         title: Collaborative Community Building Toolkit
         subtitle: "BETA Launch OCTOBER 6 - 10"
+
+        title: 'Contact us to find out how you can contribute'
       how-it-works:
         one:
           headline: 'For Community Stakeholders'
@@ -25,7 +27,7 @@ en:
           text: "Civic projects benefit from civic engagement & collaboration. Leverage Participatory Taxation to build vibrant communities"
           button: 'Civic Participation'
         three:
-          headline: 'For changemakers and community builders'
+          headline: 'For community builders'
           text: "Pitch your idea, get community support to implement it. Pledge what you can. Welcome to the RaimCrowd."
           button: 'Aim'
       start-one:
