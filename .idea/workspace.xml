@@ -55,21 +55,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="neighborly.js.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="neighborly.js.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/neighborly/neighborly.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="73" max-vertical-offset="1395">
+            <state vertical-scroll-proportion="1.6157517" vertical-offset="73" max-vertical-offset="1395">
               <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_settings.sass" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_settings.sass" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/core/_settings.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9240506" vertical-offset="18820" max-vertical-offset="20280">
-              <caret line="1279" column="35" selection-start-line="1279" selection-start-column="35" selection-end-line="1279" selection-end-column="35" />
+            <state vertical-scroll-proportion="28.875" vertical-offset="19533" max-vertical-offset="20280">
+              <caret line="1256" column="20" selection-start-line="1256" selection-start-column="20" selection-end-line="1256" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -813,18 +813,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/neighborly/neighborly.js.coffee">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/core/_settings.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="699" max-vertical-offset="1395">
-          <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+        <state vertical-scroll-proportion="28.875" vertical-offset="19533" max-vertical-offset="20280">
+          <caret line="1256" column="20" selection-start-line="1256" selection-start-column="20" selection-end-line="1256" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/core/_settings.sass">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/neighborly/neighborly.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9240506" vertical-offset="18820" max-vertical-offset="20280">
-          <caret line="1279" column="35" selection-start-line="1279" selection-start-column="35" selection-end-line="1279" selection-end-column="35" />
+        <state vertical-scroll-proportion="1.6157517" vertical-offset="73" max-vertical-offset="1395">
+          <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
           <folding />
         </state>
       </provider>
