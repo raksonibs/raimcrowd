@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e62a32c6-7f37-449b-a1f4-0d91358eeffe" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/core/_settings.sass" afterPath="$PROJECT_DIR$/app/assets/stylesheets/core/_settings.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="raiseanaim.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,8 +78,8 @@
       <file leaf-file-name="_settings.sass" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/core/_settings.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.835443" vertical-offset="18840" max-vertical-offset="20280">
-              <caret line="1278" column="19" selection-start-line="1278" selection-start-column="19" selection-end-line="1278" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.886076" vertical-offset="18745" max-vertical-offset="20280">
+              <caret line="1273" column="19" selection-start-line="1273" selection-start-column="19" selection-end-line="1273" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -834,8 +833,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/core/_settings.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.835443" vertical-offset="18840" max-vertical-offset="20280">
-          <caret line="1278" column="19" selection-start-line="1278" selection-start-column="19" selection-end-line="1278" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.886076" vertical-offset="18745" max-vertical-offset="20280">
+          <caret line="1273" column="19" selection-start-line="1273" selection-start-column="19" selection-end-line="1273" selection-end-column="19" />
           <folding />
         </state>
       </provider>
