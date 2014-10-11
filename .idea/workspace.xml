@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e62a32c6-7f37-449b-a1f4-0d91358eeffe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/core/_settings.sass" afterPath="$PROJECT_DIR$/app/assets/stylesheets/core/_settings.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/locales/modules/footer.en.yml" afterPath="$PROJECT_DIR$/app/locales/modules/footer.en.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/locales/pages/projects/index.en.yml" afterPath="$PROJECT_DIR$/app/locales/pages/projects/index.en.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/locales/pages/companies/contacts/new.en.yml" afterPath="$PROJECT_DIR$/app/locales/pages/companies/contacts/new.en.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="e62a32c6-7f37-449b-a1f4-0d91358eeffe" name="Default" comment="" />
     <ignored path="raiseanaim.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,21 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hero-header.sass" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="hero-header.sass" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/modules/hero-header.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="420">
+            <state vertical-scroll-proportion="0.83756346" vertical-offset="0" max-vertical-offset="420">
               <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_settings.sass" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/core/_settings.sass">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.4949238" vertical-offset="18326" max-vertical-offset="20280">
-              <caret line="1261" column="0" selection-start-line="1261" selection-start-column="0" selection-end-line="1261" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -871,18 +855,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/modules/hero-header.sass">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/core/_settings.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="420">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5431472" vertical-offset="18716" max-vertical-offset="20280">
+          <caret line="1262" column="43" selection-start-line="1262" selection-start-column="43" selection-end-line="1262" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/core/_settings.sass">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/modules/hero-header.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4949238" vertical-offset="18326" max-vertical-offset="20280">
-          <caret line="1261" column="0" selection-start-line="1261" selection-start-column="0" selection-end-line="1261" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.83756346" vertical-offset="0" max-vertical-offset="420">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
