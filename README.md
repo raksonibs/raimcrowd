@@ -5,7 +5,7 @@ The Canadian Civic Crowdsourcing Platform.
 
 Credits
 
-Forked from catarse and neighbor.ly with awsome work by devton, josemarluedke, irio, jasewilson and civic geeks at neighbor.ly! Inspired by work being done by SpaceHive.com & Citizinvestor.com.  
+Forked from catarse and neighbor.ly with awsome work by devton, josemarluedke, irio, jasewilson and civic geeks at neighbor.ly! Inspired by work being done at SpaceHive.com & Citizinvestor.com.  
 
 License
 
