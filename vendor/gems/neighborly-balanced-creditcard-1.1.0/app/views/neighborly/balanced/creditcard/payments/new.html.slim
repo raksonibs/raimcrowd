@@ -1,5 +1,49 @@
 = initjs_tag app_name: 'RaiseanAim', partial: true
 
+javascript:
+  Stripe.setPublishableKey('pk_live_bnlgjzPEu9hbH1jH5Suikywb');
+  jQuery(function($) {
+
+    $('#payment-form').submit(function(event) {
+      if ($("input[name='payment[use_card]']").val() == "new") {
+        var $form = $(this);
+
+        // Disable the submit button to prevent repeated clicks
+        $form.find('button').prop('disabled', true);
+
+        Stripe.card.createToken($form, stripeResponseHandler);
+
+        // Prevent the form from submitting with the default action
+        event.preventDefault();
+        return false;
+      }
+      else {
+        return true;
+      }
+      
+    });
+
+    var stripeResponseHandler = function(status, response) {
+      var $form = $('#payment-form');
+      alert(response);
+      alert(status);
+
+      if (response.error) {
+        // Show the errors on the form
+        $form.find('.payment-errors').text(response.error.message);
+        $form.find('button').prop('disabled', false);
+      } else {
+        // token contains id, last4, and card type
+        var token = response.id;
+        // Insert the token into the form so it gets submitted to the server
+        $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+        // and submit
+        $form.get(0).submit();
+      }
+    };
+  });
+
+
 
 
 
@@ -98,4 +142,6 @@
           = link_to image_tag('https://stripe.com/img/about/logos/badge/small/dark@2x.png'), 'https://www.stripe.com/', target: :blank
 
   #terms-modal.reveal-modal.small.fixed
+
+
 
