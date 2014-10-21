@@ -81,6 +81,7 @@
                     = fu.input :address_state, required: false, as: :select, collection: State.array, selected: nil, include_blank: false, input_html: { 'data-stripe' => 'address_state'}
                   .large-3.columns
                     = fu.input :address_zip_code, input_html: { 'data-stripe' => 'address_zip' }
+                    = fu.input :address_country, as: :hidden, input_html: { 'data-stripe' => 'address_country' }
 
     section.user-informations.highlighted
       
