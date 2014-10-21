@@ -106,6 +106,8 @@ javascript:
   jQuery(function($) {
 
     $('#payment-form').submit(function(event) {
+      event.preventDefault();
+      
       if ($("input[name='payment[use_card]']").val() == "new") {
         var $form = $(this);
 
