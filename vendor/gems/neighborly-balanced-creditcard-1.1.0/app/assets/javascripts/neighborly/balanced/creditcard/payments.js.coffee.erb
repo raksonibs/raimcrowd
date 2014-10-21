@@ -3,6 +3,24 @@ Neighborly.Neighborly.Balanced                     ?= {}
 Neighborly.Neighborly.Balanced.Creditcard          ?= {}
 Neighborly.Neighborly.Balanced.Creditcard.Payments ?= {}
 
+stripeResponseHandler = (status, response) ->
+  $form = $("#payment-form")
+  if response.error
+    
+    # Show the errors on the form
+    $form.find(".payment-errors").text response.error.message
+    $form.find("button").prop "disabled", false
+  else
+    
+    # token contains id, last4, and card type
+    token = response.id
+    
+    # Insert the token into the form so it gets submitted to the server
+    $form.append $("<input type=\"hidden\" name=\"stripeToken\" />").val(token)
+    
+    # and submit
+    $form.get(0).submit()
+
 Neighborly.Neighborly.Balanced.Creditcard.Payments.New = Backbone.View.extend
   el: '.neighborly-balanced-creditcard-form'
 
@@ -15,20 +33,27 @@ Neighborly.Neighborly.Balanced.Creditcard.Payments.New = Backbone.View.extend
       balanced.init("/v1/marketplaces/#{balancedMarketplaceID}")
 
     this.$button = this.$('input[type=submit]')
-    # this.$('form').bind('submit', this.submit)
+    this.$('form').bind('submit', this.submit)
     this.$('input[type=radio]').bind('change', this.toggleAddNewCard)
     this.$('input[type=radio]').bind('change', this.toggleSelected)
     this.toggleSelected()
 
   submit: (event) ->
-    selectedCard = this.$('[name="payment[use_card]"]:checked, [name="payment[use_card]"]:hidden')
-    return if $.inArray(selectedCard.val(), ['new', '']) == -1
+    Stripe.setPublishableKey "pk_live_bnlgjzPEu9hbH1jH5Suikywb"
 
-    event.preventDefault()
-    this.submitToBalanced(selectedCard)
-    # This return is necessary because of jquery_ujs was disabling the submit
-    # button even when we enable it.
-    return false
+    if $("input[name='payment[use_card]']").val() is "new"
+      event.preventDefault()
+      $form = $(this)
+      
+      # Disable the submit button to prevent repeated clicks
+      $form.find("button").prop "disabled", true
+      Stripe.card.createToken $form, stripeResponseHandler
+      
+      # Prevent the form from submitting with the default action
+      
+      false
+    else
+      true
 
   submitToBalanced: (selectedCard) ->
     that = this
