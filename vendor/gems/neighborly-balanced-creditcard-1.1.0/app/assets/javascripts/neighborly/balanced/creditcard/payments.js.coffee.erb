@@ -15,7 +15,7 @@ Neighborly.Neighborly.Balanced.Creditcard.Payments.New = Backbone.View.extend
       balanced.init("/v1/marketplaces/#{balancedMarketplaceID}")
 
     this.$button = this.$('input[type=submit]')
-    this.$('form').bind('submit', this.submit)
+    # this.$('form').bind('submit', this.submit)
     this.$('input[type=radio]').bind('change', this.toggleAddNewCard)
     this.$('input[type=radio]').bind('change', this.toggleSelected)
     this.toggleSelected()
