@@ -66,7 +66,7 @@ puts 'Creating Configuration entries...'
     project_finish_time: '02:59:59',
     secret_token: SecureRandom.hex(64),
     secret_key_base: SecureRandom.hex(64),
-    currency_charge: 'USD',
+    currency_charge: 'CAD',
     google_analytics_id: 'SOMETHING',
     email_projects: 'ideas@raiseanaim.org',
     timezone: 'US/Central',
