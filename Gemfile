@@ -16,7 +16,6 @@ gem 'state_machine', require: 'state_machine/core'
 gem 'pg'
 gem 'postgres-copy'
 gem 'pg_search'
-
 gem 'schema_plus'
 
 # Payment engines
@@ -25,7 +24,9 @@ gem 'neighborly-balanced-bankaccount', '~> 2.0.0'
 gem 'neighborly-balanced', '~> 2.0.0'
 
 # Neigbhor.ly Engines
-gem 'neighborly-admin', github: 'neighborly/neighborly-admin', branch: :master
+gem 'neighborly-admin', '~> 1.2.0'
+gem 'neighborly-api', '~> 1.0.1'
+gem 'neighborly-dashboard', '~> 1.0.1'
 
 # Turns every field on a editable one - Admin dependencies
 gem 'best_in_place', github: 'bernat/best_in_place'
