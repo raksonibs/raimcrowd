@@ -133,6 +133,7 @@ gem 'nprogress-rails'
 gem 'pjax_rails'
 gem 'initjs', '~> 2.1.2'
 gem 'remotipart', '~> 1.2.1'
+gem 'figaro'
 
 # FIXME: Not-anymore-on-development
 # Gems that are with 1 or more years on the vacuum
