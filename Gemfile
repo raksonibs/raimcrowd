@@ -6,7 +6,7 @@ gem 'rails',    '4.0.4'
 
 gem 'rails-observers', '~> 0.1.2'
 
-gem 'sidekiq',  '~> 2.17.0'
+gem 'sidekiq',  '~> 3.0'
 gem 'sinatra', '~> 1.4.3', require: false # required by sidekiq web interface mounted on /sidekiq
 
 # State machine for attributes on models
@@ -20,15 +20,15 @@ gem 'pg_search'
 gem 'schema_plus'
 
 # Payment engines
-gem 'neighborly-balanced-creditcard',  path: "vendor/gems/neighborly-balanced-creditcard-1.1.0"
-gem 'neighborly-balanced-bankaccount', path: "vendor/gems/neighborly-balanced-bankaccount-1.0.0"
-gem 'neighborly-balanced',             path: "vendor/gems/neighborly-balanced-1.1.0"
+gem 'neighborly-balanced-creditcard', '~> 2.0.0'
+gem 'neighborly-balanced-bankaccount', '~> 2.0.0'
+gem 'neighborly-balanced', '~> 2.0.0'
 
 # Neigbhor.ly Engines
 gem 'neighborly-admin', github: 'neighborly/neighborly-admin', branch: :master
 
 # Turns every field on a editable one - Admin dependencies
-gem 'best_in_place', github: 'bernat/best_in_place', branch: 'rails-4'
+gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'chartkick', '1.2.0'
 
 # Decorators
