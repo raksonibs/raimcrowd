@@ -15,7 +15,7 @@ puts 'Creating Configuration entries...'
     email_system: 'no-reply@raiseanaim.org',
     email_no_reply: 'no-reply@raiseanaim.org',
     facebook_url: 'https://www.facebook.com/raimcanada',
-    facebook_app_id: 676933745694996,
+    facebook_app_id: 215606048648414,
     twitter_username: 'raimcanada',
     platform_fee: 0.05,
     support_forum: 'http://neighborly.uservoice.com/',
@@ -78,7 +78,7 @@ puts 'Creating OauthProvider entries...'
 
   categories = %w{facebook twitter google_oauth2 linkedin}
   oauth_providers = {
-    "facebook" => {:key => "676933745694996", :secret => "de246ea811c8f38d690ec64e045d65c5"},
+    "facebook" => {:key => Figaro.env.facebook_app_id, :secret => Figaro.env.facebook_app_secret},
     "twitter" => {:key => "rKT1e8OqJMB6TqJ7CeXXvg", :secret => "2D6bpevXGoKqO4OOZw0G6JIEI6DqDScfjHwVA8rBgY"},
     "google_oauth2" => {:key => "236971248892-nsgegbflmtlvh4p34fbe5l6p1e6j9f4c.apps.googleusercontent.com", :secret => "Bru8CHjqAlB3QQIwENqKk3jL"},
     "linkedin" => {:key => "7709214kfy1d8k", :secret => "l9WEb9RkkbIoB3XN", :scope => "r_basicprofile"}

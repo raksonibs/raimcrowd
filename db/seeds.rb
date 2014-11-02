@@ -59,7 +59,7 @@ puts 'Creating Configuration entries...'
     email_system: 'no-reply@raiseanaim.org',
     email_no_reply: 'no-reply@raiseanaim.org',
     facebook_url: 'http://www.facebook.com/NEIGHBORdotLY',
-    facebook_app_id: 255971384512404,
+    facebook_app_id: 215606048648414,
     twitter_username: 'Neighborly',
     platform_fee: 0.05,
     support_forum: 'http://neighborly.uservoice.com/',
@@ -125,7 +125,7 @@ puts 'Creating OauthProvider entries...'
 
   categories = %w{facebook twitter google_oauth2 linkedin}
   categories.each do |name|
-    OauthProvider.create! name: name, path: name, secret: 'SOMETHING', key: 'SOMETHING'
+    OauthProvider.create! name: name, path: name, secret: Figaro.env.facebook_app_secret, key: Figaro.env.facebook_app_id
   end
 
 puts '---------------------------------------------'

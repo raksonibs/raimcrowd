@@ -206,6 +206,10 @@ Devise.setup do |config|
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
 
+  config.omniauth :facebook, Figaro.env.facebook_app_id, Figaro.env.facebook_app_secret
+  # config.omniauth :twitter, "KEY", "SECRET"
+  # config.omniauth :linked_in, "KEY", "SECRET"
+
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
