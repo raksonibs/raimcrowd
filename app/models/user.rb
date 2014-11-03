@@ -50,6 +50,7 @@ class User < ActiveRecord::Base
   has_many :channel_members, dependent: :destroy
   has_many :channels, through: :channel_members, source: :channel
   has_and_belongs_to_many :recommended_projects, join_table: :recommendations, class_name: 'Project'
+  has_many :endorsements
 
   accepts_nested_attributes_for :authorizations
   accepts_nested_attributes_for :channel
