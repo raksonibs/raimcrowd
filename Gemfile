@@ -24,7 +24,7 @@ gem 'neighborly-balanced-bankaccount', '~> 2.0.0'
 gem 'neighborly-balanced', '~> 2.0.0'
 
 # Neigbhor.ly Engines
-gem 'neighborly-admin'
+gem 'neighborly-admin', '~> 1.2.0'
 
 # Turns every field on a editable one - Admin dependencies
 gem 'best_in_place', github: 'bernat/best_in_place'
