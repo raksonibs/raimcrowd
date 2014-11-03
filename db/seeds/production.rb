@@ -28,24 +28,10 @@ puts 'Creating Configuration entries...'
     timezone: 'US/Central',
     devise_secret_key: SecureRandom.hex(64),
     balanced_api_key_secret: 'YOUR_API_KEY_SECRET_HERE',
-    balanced_marketplace_id: 'YOUR_MARKETPLACE_ID_HERE'
-    #secure_review_host: nil,
-    #uservoice_key: nil,
-    #mailchimp_api_key: nil,
-    #mailchimp_list_id: nil,
-    #mailchimp_url: nil,
-    #mandrill_user_name: nil,
-    #mandrill: nil,
+    balanced_marketplace_id: 'YOUR_MARKETPLACE_ID_HERE',
     aws_bucket: "raiseanaim",
     aws_access_key: "AKIAIMQJQOG2A3LO6JHQ",
-    aws_secret_key: "VWJqa8p0z5CbvzqkdKB/8EB7pJIqLmDZzjVU53zC",
-    #paypal_username: nil,
-    #paypal_password: nil,
-    #paypal_signature: nil,
-    #stripe_api_key: nil,
-    #stripe_public_key: nil,
-    #authorizenet_login_id: nil,
-    #authorizenet_transaction_key: nil
+    aws_secret_key: "VWJqa8p0z5CbvzqkdKB/8EB7pJIqLmDZzjVU53zC"
   }.each do |name, value|
      Configuration[name] = value
   end
