@@ -12,11 +12,18 @@ module OmniauthAuthenticationControllerHelpers
       needs_ownership_confirmation: -> do
         session[:new_user_attrs] = omniauth_sign_in.data
 
-        flash.alert = t('needs_ownership_confirmation',
+        # if omniauth_sign_in.data[:authorizations_attributes][0][:oauth_provider_id] == 1 
+       #  sign_in omniauth_sign_in.user, event: :authentication
+
+       #  flash.notice = login_flash_message(omniauth_sign_in.user, omniauth_sign_in.provider_name.capitalize)
+       #  redirect_to after_sign_in_path_for(:user)
+       # # else
+          flash.alert = t('needs_ownership_confirmation',
           scope: 'controllers.omniauth_authentication')
-        flash[:user_email]   = session[:new_user_attrs].try(:[], :email)
-        puts "NEEDS OWNERSHIP CONFIRMATION"
-        redirect_to new_user_session_path
+          flash[:user_email]   = session[:new_user_attrs].try(:[], :email)
+          puts "NEEDS OWNERSHIP CONFIRMATION"
+          redirect_to new_user_session_path
+         # end
       end,
       needs_email: -> do
         session[:new_user_attrs] = omniauth_sign_in.data
