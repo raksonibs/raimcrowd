@@ -79,9 +79,9 @@ puts 'Creating OauthProvider entries...'
   categories = %w{facebook twitter google_oauth2 linkedin}
   oauth_providers = {
     "facebook" => {:key => Figaro.env.facebook_app_id, :secret => Figaro.env.facebook_app_secret},
-    "twitter" => {:key => "rKT1e8OqJMB6TqJ7CeXXvg", :secret => "2D6bpevXGoKqO4OOZw0G6JIEI6DqDScfjHwVA8rBgY"},
-    "google_oauth2" => {:key => "236971248892-nsgegbflmtlvh4p34fbe5l6p1e6j9f4c.apps.googleusercontent.com", :secret => "Bru8CHjqAlB3QQIwENqKk3jL"},
-    "linkedin" => {:key => "7709214kfy1d8k", :secret => "l9WEb9RkkbIoB3XN", :scope => "r_basicprofile"}
+    "twitter" => {:key => Figaro.env.twitter_app_id, :secret => Figaro.env.twitter_app_secret},
+    "google_oauth2" => {:key => Figaro.env.google_oauth2_app_id, :secret => Figaro.env.google_oauth2_app_secret},
+    "linkedin" => {:key => Figaro.env.linkedin_app_id, :secret => Figaro.env.linkedin_app_secret, :scope => "r_basicprofile"}
   }
   
   OauthProvider.where(name: "facebook", path: "facebook").first_or_create, secret: 'SOMETHING', key: 'SOMETHING'

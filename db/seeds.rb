@@ -125,7 +125,7 @@ puts 'Creating OauthProvider entries...'
 
   categories = %w{facebook twitter google_oauth2 linkedin}
   categories.each do |name|
-    OauthProvider.create! name: name, path: name, secret: Figaro.env.facebook_app_secret, key: Figaro.env.facebook_app_id
+    OauthProvider.create! name: name, path: name, secret: Figaro.env.send(name+"_app_secret"), key: Figaro.env.send(name+"_app_id")
   end
 
 puts '---------------------------------------------'
