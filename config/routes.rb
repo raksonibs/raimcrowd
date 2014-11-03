@@ -19,7 +19,7 @@ Neighborly::Application.routes.draw do
     post '/sign_up', to: 'devise/registrations#create', as: :sign_up
   end
 
-  get '/', to: 'static#participating', as: :participating, :constraints => { :subdomain => 'participating'}
+  # get '/', to: 'static#participating', as: :participating, :constraints => { :subdomain => 'participating'}
 
   get "/careers" => "static#careers"
   get '/thank_you' => "static#thank_you"
@@ -92,6 +92,7 @@ Neighborly::Application.routes.draw do
   get "/terms",                 to: "static#terms",               as: :terms
   get "/privacy",               to: "static#privacy",             as: :privacy
   get "/start",                 to: "projects#start",             as: :start
+  get '/participating',         to: 'static#participating',       as: :participating_nonsub
 
   # Only accessible on development
   if Rails.env.development?
