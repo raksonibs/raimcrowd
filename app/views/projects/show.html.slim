@@ -76,6 +76,8 @@
           - else
             .large-3.columns.contribute
               = link_to t('.status-bar.contribute'), new_project_contribution_url(@project), class: 'button small'
+            / .large-3.columns.endorse
+            /   = link_to t('.status-bar.endorse'), new_project_endorse_url(@project), class: 'button small'
 
   .row.page-main-content
     section.large-9.columns.main

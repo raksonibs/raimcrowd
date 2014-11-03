@@ -140,6 +140,8 @@ Neighborly::Application.routes.draw do
         put 'credits_checkout'
       end
     end
+
+    resources :endorsements, controller: 'projects/endorsements', except: :update
   end
 
   scope :login, controller: :sessions do

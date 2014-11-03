@@ -1,8 +1,8 @@
-class Users::EndorsementssController < ApplicationController
+class Users::EndorsementsController < ApplicationController
   inherit_resources
   belongs_to :user
 
-  def new
+  def index
     @project = Project.find(params[:project_id])
 
     unless current_user
@@ -10,15 +10,5 @@ class Users::EndorsementssController < ApplicationController
     end
     @user = parent
     render layout: false
-  end
-
-  def create
-    project = Project.find(params[:project_id])
-    unless current_user
-      return redirect_to new_user_session_path
-    end
-    
-    flash.notice = "nice endorsement."
-    redirect_to project_path(project)
   end
 end
