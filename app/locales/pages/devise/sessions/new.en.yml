@@ -13,6 +13,6 @@ en:
         form:
           labels:
             remember_me: 'Remember me'
-          # inputs:
-          #   submit: 'Log in'
+          inputs:
+            submit: 'Log in'
           #   facebook: 'Log in with Facebook'

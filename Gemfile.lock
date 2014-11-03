@@ -477,7 +477,7 @@ DEPENDENCIES
   kaminari
   launchy
   letter_opener
-  neighborly-admin (~> 1.2.0)
+  neighborly-admin
   neighborly-balanced (~> 2.0.0)
   neighborly-balanced-bankaccount (~> 2.0.0)
   neighborly-balanced-creditcard (~> 2.0.0)
