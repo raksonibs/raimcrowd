@@ -13,8 +13,8 @@ en:
         already_joined: 'Already joined? %{link}.'
         sign_in: 'Sign in'
       hero:
-        title: Collaborative Community Building Toolkit for Cities
-        subtitle: "BETA RELEASE COMING SOON - www.raimcrowd.org"
+        title: Civic Crowdfunding 2.0
+        subtitle: Crowdsourcing | Participation | Engagement 
 
       how-it-works:
         one:
