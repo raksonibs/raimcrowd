@@ -5,6 +5,8 @@ class Companies::ContactsController < ApplicationController
 
   def create
     create!(:notice => t('controllers.companies.contacts.create.success'))
+    @contact = params[:company_contact]
+    ContactMailer.send_contact(@contact)
   end
 
   protected
