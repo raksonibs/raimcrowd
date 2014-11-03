@@ -57,7 +57,7 @@ end
   email_system: 'no-reply@raiseanaim.org',
   email_no_reply: 'no-reply@raiseanaim.org',
   facebook_url: 'https://www.facebook.com/raimcanada',
-  facebook_app_id: 215606048648414,
+  facebook_app_id: '764971740235673',
   twitter_username: 'raimcanada',
   platform_fee: 0.05,
   support_forum: 'http://neighborly.uservoice.com/',
