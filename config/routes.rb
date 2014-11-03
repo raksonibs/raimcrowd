@@ -141,7 +141,7 @@ Neighborly::Application.routes.draw do
       end
     end
 
-    resources :endorsements, controller: 'projects/endorsements', except: :update
+    # resources :endorsements, controller: 'projects/endorsements', except: :update
   end
 
   scope :login, controller: :sessions do
@@ -153,7 +153,7 @@ Neighborly::Application.routes.draw do
 
   resources :users, path: 'neighbors' do
     resources :questions, controller: 'users/questions', only: [:new, :create]
-    resources :endorsements, controller: 'users/endorsements', only: [:new, :create, :destroy]
+    # resources :endorsements, controller: 'users/endorsements', only: [:new, :create, :destroy]
     resources :projects, controller: 'users/projects', only: [ :index ]
     resources :contributions, controller: 'users/contributions', only: [:index] do
       member do

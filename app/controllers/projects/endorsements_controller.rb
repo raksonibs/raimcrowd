@@ -1,4 +1,4 @@
-class Projects::ContributionsController < ApplicationController
+class Projects::EndorsementsController < ApplicationController
   after_filter :verify_authorized, except: :index
   inherit_resources
   actions :show, :new, :edit, :create, :credits_checkout
