@@ -84,7 +84,9 @@ puts 'Creating OauthProvider entries...'
     "linkedin" => {:key => Figaro.env.linkedin_app_id, :secret => Figaro.env.linkedin_app_secret, :scope => "r_basicprofile"}
   }
   
-  OauthProvider.where(name: "facebook", path: "facebook").first_or_create, secret: 'SOMETHING', key: 'SOMETHING'
+  categories.each do |name|
+    OauthProvider.create! name: name, path: name, secret: Figaro.env.send(name+"_app_secret"), key: Figaro.env.send(name+"_app_id")
+  end
 
 puts '---------------------------------------------'
 puts 'Done!'
