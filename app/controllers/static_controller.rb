@@ -14,6 +14,7 @@ class StaticController < ApplicationController
   def start_terms; end
   def start; end
   def faq; end
+  def participating; end
 
   def thank_you
     contribution = Contribution.find session[:thank_you_contribution_id]

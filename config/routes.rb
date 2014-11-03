@@ -19,6 +19,8 @@ Neighborly::Application.routes.draw do
     post '/sign_up', to: 'devise/registrations#create', as: :sign_up
   end
 
+  get '/', to: 'static#participating', as: :participating, :constraints => { :subdomain => 'participating'}
+
   get "/careers" => "static#careers"
   get '/thank_you' => "static#thank_you"
 
