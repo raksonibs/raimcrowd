@@ -1,7 +1,6 @@
 class Projects::EndorsementsController < ApplicationController
-  after_filter :verify_authorized, except: :index
+  # after_filter :verify_authorized, except: :index
   inherit_resources
-  actions :show, :new, :edit, :create, :credits_checkout
   skip_before_filter :verify_authenticity_token, only: [:moip]
   skip_before_filter :set_persistent_warning
   has_scope :available_to_count, type: :boolean
@@ -25,55 +24,25 @@ class Projects::EndorsementsController < ApplicationController
   end
 
   def new
-    @contribution = Contribution.new(project: parent, user: current_user)
-    authorize @contribution
-
-    @create_url = create_url
-    @rewards = [empty_reward] + @project.rewards.not_soon.remaining.order(:minimum_value)
-
-    if params[:reward_id] && (selected_reward = @project.rewards.not_soon.find(params[:reward_id])) && !selected_reward.sold_out?
-      @contribution.reward = selected_reward
-      @contribution.value = "%0.0f" % selected_reward.minimum_value
-    end
+    @endorsment = Endorsement.new(project: parent, user: current_user)
   end
 
   def create
-    @contribution = Contribution.new(permitted_params[:contribution].
-                                     merge(user: current_user,
-                                           project: parent))
-
-    @contribution.reward_id = nil if params[:contribution][:reward_id].to_i == 0
-    authorize @contribution
-
-    create! do |success, failure|
-      success.html do
-        if @contribution.value == 0
-          @contribution.confirm!
-          flash[:notice] = t('success', scope: 'controllers.projects.contributions.pay')
-          return redirect_to main_app.project_contribution_path(
-            @contribution.project.permalink,
-            @contribution.id
-          )
-        else
-          session[:thank_you_contribution_id] = @contribution.id
-          flash.delete(:notice)
-          return redirect_to edit_project_contribution_path(project_id: @project, id: @contribution.id)
-        end
-      end
-
-      failure.html do
-        return redirect_to new_project_contribution_path(@project), flash: { failure: t('controllers.projects.contributions.create.error') }
-      end
+    @endorsment = Endorsement.new({project: parent, user: current_user})
+    if @endorsment.save
+      redirect_to project_path(parent)
+    else
+      redirect_to project_path(parent)
     end
   end
 
 
   protected
   def permitted_params
-    params.permit(policy(@contribution || Contribution).permitted_attributes)
+    params.permit(policy(@endorsment || Contribution).permitted_attributes)
   end
 
   def collection
-    @contributions ||= apply_scopes(end_of_association_chain).available_to_display.order("confirmed_at DESC").per(10)
+    @endorsments ||= apply_scopes(end_of_association_chain).available_to_display.order("confirmed_at DESC").per(10)
   end
 end
