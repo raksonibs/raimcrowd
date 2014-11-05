@@ -192,8 +192,9 @@
         section.custom.neighbors-behind-this
           .title Endorsers So Far
           .list
-            - for endorsement in @project.endorsements.order("RANDOM()").limit(15)
-              = link_to image_tag(endorsement.user.display_image), user_path(endorsement.user), title: endorsement.user.display_name, class: 'has-tip', data: { tooltip: '' }
+            - if @project.endorsements != nil 
+              - for endorsement in @project.endorsements.order("RANDOM()").limit(15)
+                = link_to image_tag(endorsement.user.display_image), user_path(endorsement.user), title: endorsement.user.display_name, class: 'has-tip', data: { tooltip: '' }
           .more
             = link_to pluralize(@project.total_endorsements, t('words.endorsement_singular'), t('words.endorsement_plural')), project_path(@project)
 
