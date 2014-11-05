@@ -1,0 +1,15 @@
+- if endorsement.user.present?
+  .large-6.small-6.columns.contribution-wrapper
+    .row
+      .large-12.columns
+        .contribution[class="#{endorsement.user.try(:profile_type)}"]
+          .row.collapse
+            .columns[class="large-#{ (endorsement.user.organization? || endorsement.user.channel?) ? 7 : 4 }"]
+              = link_to user_path(endorsement.user) do
+                - if endorsement.user.organization? || endorsement.user.channel?
+                  = endorsement.user.display_image_html width: 181, height: 85
+                - else
+                  = endorsement.user.display_image_html width: 85, height: 85
+            .columns[class="large-#{ (endorsement.user.organization? || endorsement.user.channel?) ? 5 : 8 }"]
+              .name
+                 = link_to endorsement.user.display_name, user_path(endorsement.user)
