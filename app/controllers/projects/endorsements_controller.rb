@@ -32,11 +32,7 @@ class Projects::EndorsementsController < ApplicationController
                                            project: parent})
     create! do |success, failure|
       success.html do
-          flash[:notice] = t('success', scope: 'controllers.projects.endorsements.success')
-          return redirect_to main_app.project_endorsement_path(
-            @endorsement.project.permalink,
-            @endorsement.id
-          )
+          return redirect_to project_path(@endorsement.project.permalink), flash: { failure: t('controllers.projects.endorsements.success') }
       end
 
       failure.html do
