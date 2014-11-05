@@ -6,6 +6,9 @@ en:
       create:
         success: 'Your information has been updated!'
     projects:
+      endorsements:
+        success: "Yay you endorsed the project!"
+        failure: "You have already endorsed this project! Try contributing!"
       contributions:
         new:
           no_reward: "No perks! I just want to help out the project!"

@@ -75,10 +75,8 @@
               span = t(".display_status.#{@project.campaign_type}.#{@project.display_status}", goal: @project.display_goal, date: (l(@project.display_expires_at.to_date, format: :long) rescue nil))
           - else
             .large-3.columns.contribute
-              = link_to t('.status-bar.contribute'), new_project_contribution_url(@project), class: 'button small'
-            .large-3.columns.button.endorse
-              = simple_form_for new_project_endorsement_url(@project), remote: true, method: 'POST' do |f|
-                = f.input :user, :as => :hidden, :input_html => { :value => current_user }
+              = link_to t('.status-bar.contribute'), new_project_contribution_url(@project), class: 'button small small-contribute'
+              = link_to "Endorse", project_endorsements_path(@project, method: :post), class: "button small endorse"
 
   .row.page-main-content
     section.large-9.columns.main
@@ -158,7 +156,7 @@
                 br
                 | Do you need some #{mail_to t('site.email.contact'), 'help'}?
           = link_to t('.contribute'), new_project_contribution_url(@project), class: "button with-icon contribute"
-          = button_to "Endorse", project_endorsements_path(@project, method: :post)
+          = button_to "Endorse", project_endorsements_path(@project, method: :post), class: "button endorse"
 
         - else
           .alert-box.secondary.status-description
