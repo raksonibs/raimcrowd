@@ -28,18 +28,27 @@ class Projects::EndorsementsController < ApplicationController
   end
 
   def create
-    @endorsment = Endorsement.new({project: parent, user: current_user})
-    if @endorsment.save
-      redirect_to project_path(parent)
-    else
-      redirect_to project_path(parent)
+    @endorsement = Endorsement.new({user: current_user,
+                                           project: parent})
+    create! do |success, failure|
+      success.html do
+          flash[:notice] = t('success', scope: 'controllers.projects.endorsements.success')
+          return redirect_to main_app.project_endorsement_path(
+            @endorsement.project.permalink,
+            @endorsement.id
+          )
+      end
+
+      failure.html do
+        return redirect_to new_project_contribution_path(@project), flash: { failure: t('controllers.projects.endorsements.failure') }
+      end
     end
   end
 
 
   protected
   def permitted_params
-    params.permit(policy(@endorsment || Contribution).permitted_attributes)
+    params.permit(policy(@endorsment || Endorsement).permitted_attributes)
   end
 
   def collection
