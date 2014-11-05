@@ -136,6 +136,10 @@ class Project < ActiveRecord::Base
     project_total ? project_total.total_contributions : 0
   end
 
+  def total_endorsements
+    self.endorsements.count
+  end
+
   def total_payment_service_fee
     project_total ? project_total.total_payment_service_fee : 0.0
   end

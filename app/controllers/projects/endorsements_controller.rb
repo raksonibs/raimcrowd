@@ -52,6 +52,6 @@ class Projects::EndorsementsController < ApplicationController
   end
 
   def collection
-    @endorsments ||= apply_scopes(end_of_association_chain).available_to_display.order("confirmed_at DESC").per(10)
+    @endorsments ||= Endorsement.by_project(parent.id)
   end
 end
