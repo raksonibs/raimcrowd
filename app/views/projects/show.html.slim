@@ -96,6 +96,11 @@
             = t('.tabs.contributions')
             span.count=" #{@project.total_contributions}"
 
+        - if @project.total_endorsements > 0
+          = tab_link_to project_endorsements_path(@project) do
+            = t('.tabs.endorsements')
+            span.count=" #{@project.total_endorsements}"
+
         = tab_link_to comments_project_path(@project) do
           = t('.tabs.comments')
           span.commentsCount.count style="display: none;"
@@ -183,5 +188,13 @@
                 = link_to image_tag(contribution.user.display_image), user_path(contribution.user), title: contribution.user.display_name, class: 'has-tip', data: { tooltip: '' }
           .more
             = link_to pluralize(@project.total_contributions, t('words.neighbor_singular'), t('words.neighbor_plural')), project_contributions_path(@project)
+      - if @project.total_endorsements > 0
+        section.custom.neighbors-behind-this
+          .title Endorsers So Far
+          .list
+            - for endorsement in @project.endorsements.order("RANDOM()").limit(15)
+              = link_to image_tag(endorsement.user.display_image), user_path(endorsement.user), title: endorsement.user.display_name, class: 'has-tip', data: { tooltip: '' }
+          .more
+            = link_to pluralize(@project.total_endorsements, t('words.endorsement_singular'), t('words.endorsement_plural')), project_path(@project)
 
       section.rewards[data-rewards-path=project_rewards_path(@project) data-can-update="#{policy(@project).update?}"]

@@ -9,6 +9,8 @@ en:
     remaining_singular: 'left'
     neighbor_plural: 'raisers'
     neighbor_singular: 'raiser'
+    endorsement_singular: 'endorser'
+    endorsement_plural: 'endorsers'
     confirm: 'Are you sure?'
     detele: 'Delete'
     cancel: 'Cancel'
