@@ -492,7 +492,7 @@ DEPENDENCIES
   neighborly-balanced!
   neighborly-balanced-bankaccount!
   neighborly-balanced-creditcard!
-  newrelic_rpm (= 3.6.9.171)
+  newrelic_rpm
   nprogress-rails
   omniauth
   omniauth-facebook (= 1.5.1)
