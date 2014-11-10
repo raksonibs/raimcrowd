@@ -46,7 +46,7 @@ head
   script src="https://js.stripe.com/v2/" type="text/javascript" 
   = render 'layouts/analytics'
 body
-  = initjs_tag app_name: 'Neighborly'
+  = initjs_tag app_name: 'Raimcrowd'
   = render_facebook_sdk
   = render 'layouts/loader'
   = render 'layouts/header'
@@ -62,6 +62,7 @@ body
   /.row.content
   = yield
   = render 'layouts/footer'
+  = render 'layouts/anal_footer'
   = yield :modals
   = render 'layouts/uservoice'
 |</html>
