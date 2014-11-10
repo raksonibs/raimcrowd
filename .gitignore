@@ -29,6 +29,7 @@ spec/tmp/
 *.sublime-workspace
 *.dot
 .ruby-version
+.env
 
 # Ignore application configuration
 /config/application.yml
