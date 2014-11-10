@@ -65,7 +65,7 @@ end
   secret_token: SecureRandom.hex(64),
   secret_key_base: SecureRandom.hex(64),
   currency_charge: 'CAD',
-  google_analytics_id: 'SOMETHING',
+  google_analytics_id: 'UA-56569850-1',
   email_projects: 'ideas@raiseanaim.org',
   timezone: 'US/Central',
   devise_secret_key: SecureRandom.hex(64),
