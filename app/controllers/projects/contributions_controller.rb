@@ -29,7 +29,7 @@ class Projects::ContributionsController < ApplicationController
     authorize @contribution
 
     @create_url = create_url
-    @rewards = [empty_reward] + @project.rewards.not_soon.remaining.order(:minimum_value)
+    @rewards = @project.rewards.not_soon.remaining.order(:minimum_value)
 
     if params[:reward_id] && (selected_reward = @project.rewards.not_soon.find(params[:reward_id])) && !selected_reward.sold_out?
       @contribution.reward = selected_reward
@@ -90,10 +90,6 @@ class Projects::ContributionsController < ApplicationController
 
   def collection
     @contributions ||= apply_scopes(end_of_association_chain).available_to_display.order("confirmed_at DESC").per(10)
-  end
-
-  def empty_reward
-    Reward.new(minimum_value: 0, description: t('controllers.projects.contributions.new.no_reward'))
   end
 
   def create_url
