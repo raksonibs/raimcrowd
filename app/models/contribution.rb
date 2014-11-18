@@ -6,6 +6,8 @@ class Contribution < ActiveRecord::Base
 
   delegate :display_value, :display_confirmed_at, to: :decorator
 
+  self.primary_key = 'id'
+
   belongs_to :user
   belongs_to :project
   belongs_to :reward
